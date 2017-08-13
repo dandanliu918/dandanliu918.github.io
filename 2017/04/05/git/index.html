@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>git | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="git的使用   功能：类似网盘 http://ohmyz.sh/ mac安装 先安装homebrew  brew install git  使用git 1.告诉git你是谁？ git config --global user.name zhufengzhufeng git config --global user.email 8877892@qq.com  注意：没有设置则不能提交（只能设置一次">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git">
+<meta property="og:url" content="https://dandanliu918.github.io/2017/04/05/git/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="git的使用   功能：类似网盘 http://ohmyz.sh/ mac安装 先安装homebrew  brew install git  使用git 1.告诉git你是谁？ git config --global user.name zhufengzhufeng git config --global user.email 8877892@qq.com  注意：没有设置则不能提交（只能设置一次">
+<meta property="og:updated_time" content="2017-04-26T16:04:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git">
+<meta name="twitter:description" content="git的使用   功能：类似网盘 http://ohmyz.sh/ mac安装 先安装homebrew  brew install git  使用git 1.告诉git你是谁？ git config --global user.name zhufengzhufeng git config --global user.email 8877892@qq.com  注意：没有设置则不能提交（只能设置一次">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://dandanliu918.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/05/git/" class="article-date">
+  <time datetime="2017-04-05T05:47:35.000Z" itemprop="datePublished">2017-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="git的使用"><a href="#git的使用" class="headerlink" title="git的使用"></a>git的使用</h1><p>   功能：类似网盘 <a href="http://ohmyz.sh/" target="_blank" rel="external">http://ohmyz.sh/</a></p>
+<h3 id="mac安装"><a href="#mac安装" class="headerlink" title="mac安装"></a>mac安装</h3><ul>
+<li>先安装homebrew </li>
+<li>brew install git</li>
+</ul>
+<h3 id="使用git"><a href="#使用git" class="headerlink" title="使用git"></a>使用git</h3><ul>
+<li><p>1.告诉git你是谁？</p>
+<pre><code>git config --global user.name zhufengzhufeng
+git config --global user.email 8877892@qq.com
+
+注意：没有设置则不能提交（只能设置一次）
+
+git config list 查看配置列表
+</code></pre></li>
+<li><p>2.git的作用 版本控制（文件）</p>
+<pre><code>1 初始化使用git的位置
+2 mkdir useGit 创建一个 useGit 文件夹 mkdir useGit/aa/bb -p 循环创建
+3 cd useGit/ 进入到这个文件夹内
+4 rm -rf a 循环删除（一旦删除永远找回）
+5 ls 查看
+6 ls -al 查看目录下所有文件
+7 git init 初始化一个空的厂库
+</code></pre></li>
+</ul>
+<ul>
+<li><p>3.文件编辑</p>
+<pre><code>1 touch 1.txt 创建文件
+2 vi 1.txt 编辑进入文件 出现 -&gt; 用 i键 insert进入  编辑代码
+3 esc + :wq 保存并且退出
+4 esc + :q! 退出
+5 cat 1.txt 查看文件内容是否存在
+</code></pre><ul>
+<li><p>4.将文件进行提交</p>
+<p>   1 将文件加入到暂存区中（不能直接提交到历史去）<br>   2 git add -A/./1.txt 添加所有文件名<br>   3 git status/ 查看状态<br>   4 git stage 暂存区<br>   5 git commit -m’输入说明’<br>   6 git log 查看提交日志</p>
+</li>
+<li><p>5.代码比较 查看代码 增加和减少</p>
+<p>   1 git diff 比较工作区域和暂存区域<br>   2 git diff master 当前工作区域和历史区域比较（master：是根据分支名改变而变）<br>   3 git diff –cached  暂存区域和历史区域比较 </p>
+</li>
+<li><p>6.暂存区和工作区的文件修改</p>
+<p>   1 git checkout 1.txt 把暂存区域的源文件拉回来到工作区  并且覆盖本地的文件<br>   2 git reset HEAD 1.txt 将暂存区的中内容移除 返回最初的源文件</p>
+</li>
+<li><p>7.回到过去 &amp;&amp; 回到未来</p>
+<ul>
+<li><p>回到过去<br>1 git log 获取id（b0d6c6e1:git log 查看日志：只能查看当前版本之前的内容）<br>2 git reset –hard b0d6c6e1  回到过去 </p>
+</li>
+<li><p>回到未来<br>1 git reflog 查看你所有的日志情况<br>2 git reset –hard b0d6c6e1 回到未来</p>
+<p>git log –grep zz 根据参数名搜索</p>
+</li>
+</ul>
+</li>
+<li><p>8.git的分支管理</p>
+<ul>
+<li>主干：通过主干建立一个分支，当代码完成后确认无误后再合并到主干上</li>
+<li><p>创建分支：会在当前代码下克隆一份一模一样的</p>
+<pre><code>1 git branch 查看分支
+2 git branch dev 创建分支
+3 git checkout dev 切换分支
+4 git branch -d/D dev 删除分支 
+5 git checkout -b dev 创建并且切换分支
+</code></pre></li>
+<li><p>要将内容提交到dev分支上管理，否则只是工作区的内容</p>
+</li>
+<li><p>在master合并分支  </p>
+<pre><code>1 git checkout  master 进入主分支
+2 git merge dev 合并分支
+</code></pre></li>
+</ul>
+</li>
+<li><p>9 主干和分支一模一样，如何解决这个冲突？</p>
+<p>   1 在文件中保留最后想留下的结果<br>   2 提交最终结果</p>
+<p>   git commit -a -m’dj’ 提交连写（首次提交的文件不能使用这种方式提交）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="把本地文件上传到github-上"><a href="#把本地文件上传到github-上" class="headerlink" title="把本地文件上传到github 上"></a>把本地文件上传到github 上</h2><pre><code>- 如果线上有内容，先将线上的拿下来，再次提交 
+- 初始化厂库 git init 
+</code></pre><ul>
+<li><p>origin   </p>
+<pre><code>1 创建readme.md文件
+2 echo &quot;#hello&quot; &gt; readme.md 创建文件      
+3 touch .gitignore  忽略文件(里面都是我们不需要的文件)
+</code></pre></li>
+<li><p>添加远程仓库</p>
+<pre><code>1 git init
+2 git add README.md 添加 暂存区
+3 git commit -m &quot;first commit&quot; 提交 历史区
+4 git remote add origin https://github.com/dandanliu918/myread.git 添加
+5 git push -u origin master 推送 -u:upstream 
+6 git remote -v 查看通道
+</code></pre></li>
+<li><p>部署静态的gthub页面(就是把自己本地文件上传到git)</p>
+<pre><code>1 先建一个仓库hello 
+2 git init  初始化本地仓库
+3 git checkout -b gh-pages 分支名不能更改
+4 git add . 添加到暂存区
+5 git commit -m&apos;hello&apos; 提交到历史区
+6 git remote add origin+ 地址
+7 git push origin gh-pages 推送
+
+8 然后到git上点击settings 里面找到https://dandanliu918.github.io/hello/
+</code></pre></li>
+<li><p>交作业流程</p>
+<pre><code>1 组员fork组长的项目（不能fork多次）
+2 git clone +  组长 + 文件夹名字
+3 git add . 推送本地文件
+4 git commit -m&apos;&apos;
+5 git push origin master
+6 new pull request
+</code></pre></li>
+<li><p>组长给组员开通权限</p>
+<pre><code>1 自己的仓库下 - setings -coll
+</code></pre></li>
+<li><p>开通权限后组员操作</p>
+<pre><code>1 组员将代码克隆下来
+2 找到自己组放自己的文件夹
+3 git add .
+4 git commit -m&apos;xxx作业&apos;
+5 git pull origin master
+6 git push origin master
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/04/05/git/" data-id="cj6ajxy63000uamdj52w171dy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/05/HTML5-CSS3-LESS/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          HTML5&amp;CSS3&amp;LESS
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/05/Dom/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Dom</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/13/postName/">Web前端开发</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Color/">CSS3-颜色</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Slected/">CSS3-选择器</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Transition/">CSS3-过渡</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Border/">CSS-Border</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

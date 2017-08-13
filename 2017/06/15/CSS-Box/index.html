@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CSS3-盒子 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CSS 盒子模型 W3C标准 外盒尺寸计算（元素空间尺寸） element 空间高度 = 内容高度+内距+边框+外距 element 空间宽度 = 内容宽度+内距+边框+外距 内盒子尺寸计算（元素大小） element 空间高度 = 内容高度+内距+边框（height 为内容高度） element 空间宽度 = 内容宽度+内距+边框（width 为内容宽度）    IE6以下  外盒尺寸计算（元素">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3-盒子">
+<meta property="og:url" content="https://dandanliu918.github.io/2017/06/15/CSS-Box/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CSS 盒子模型 W3C标准 外盒尺寸计算（元素空间尺寸） element 空间高度 = 内容高度+内距+边框+外距 element 空间宽度 = 内容宽度+内距+边框+外距 内盒子尺寸计算（元素大小） element 空间高度 = 内容高度+内距+边框（height 为内容高度） element 空间宽度 = 内容宽度+内距+边框（width 为内容宽度）    IE6以下  外盒尺寸计算（元素">
+<meta property="og:updated_time" content="2017-06-15T16:02:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3-盒子">
+<meta name="twitter:description" content="CSS 盒子模型 W3C标准 外盒尺寸计算（元素空间尺寸） element 空间高度 = 内容高度+内距+边框+外距 element 空间宽度 = 内容宽度+内距+边框+外距 内盒子尺寸计算（元素大小） element 空间高度 = 内容高度+内距+边框（height 为内容高度） element 空间宽度 = 内容宽度+内距+边框（width 为内容宽度）    IE6以下  外盒尺寸计算（元素">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://dandanliu918.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS-Box" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/15/CSS-Box/" class="article-date">
+  <time datetime="2017-06-15T15:55:26.000Z" itemprop="datePublished">2017-06-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS3-盒子
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CSS-盒子模型"><a href="#CSS-盒子模型" class="headerlink" title="CSS 盒子模型"></a>CSS 盒子模型</h2><ul>
+<li><p>W3C标准</p>
+<pre><code>外盒尺寸计算（元素空间尺寸）
+element 空间高度 = 内容高度+内距+边框+外距
+element 空间宽度 = 内容宽度+内距+边框+外距
+内盒子尺寸计算（元素大小）
+element 空间高度 = 内容高度+内距+边框（height 为内容高度）
+element 空间宽度 = 内容宽度+内距+边框（width 为内容宽度）
+</code></pre></li>
+</ul>
+<ul>
+<li><p>IE6以下 </p>
+<pre><code>外盒尺寸计算（元素空间尺寸）
+element 空间高度 = 内容高度+外距（height 包含了 内容高度 边框 内距）
+element 空间宽度 = 内容宽度+外距（width 包含了 内容宽度 边框 内距）
+内盒子尺寸计算（元素大小）   
+element 空间高度 = 内容高度（height 包含了 内容高度 边框 内距）
+element 空间宽度 = 内容宽度（height 包含了 内容宽度 边框 内距）
+</code></pre></li>
+</ul>
+<h2 id="CSS盒子基本属性"><a href="#CSS盒子基本属性" class="headerlink" title="CSS盒子基本属性"></a>CSS盒子基本属性</h2><ul>
+<li><p>box-sizing 8+</p>
+<pre><code>content-box 默认值
+border-box 包含边框的内容
+inherit 继承父类样式
+</code></pre></li>
+<li><p>overflow-x和overflow-y 内容溢出 水平和垂直</p>
+<pre><code>visible 默认值
+auto 自动
+hidden 隐藏
+scroll 滚动条
+no-display 当内容溢出容器时不显示元素
+no-content 当内容溢出容器时不显示内容
+</code></pre></li>
+<li><p>resize 自由缩放属性 改变元素尺寸大小</p>
+<pre><code>none
+both 用户不能拖动元素 同时修改元素的宽度和高度
+horizontal 用户可以拖动元素 可以修改宽度 高度不可以
+vertical 用户可以拖动宽度 不能修改高度
+inherit 继承父类元素属性值
+</code></pre><ul>
+<li><p>outline 外轮廓属性 8+</p>
+<p>   outline-color 轮廓线的颜色<br>   outline-style 轮廓线的样式<br>   outline-width 轮廓线的宽度<br>   outline-offset 轮廓线偏移位置数值（可以是负值）<br>   inherit 继承父元素的outline效果</p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/06/15/CSS-Box/" data-id="cj6ajxy580005amdjfq2i8unq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/15/CSS-Background/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CSS-Background
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/15/CSS-Gradin/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS3-渐变</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/13/postName/">Web前端开发</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Color/">CSS3-颜色</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Slected/">CSS3-选择器</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Transition/">CSS3-过渡</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Border/">CSS-Border</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

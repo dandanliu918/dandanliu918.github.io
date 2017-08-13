@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>REPLACE&amp;FOREACH&amp;MAP | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="replace replace(reg,callback)  参数1 正则 参数2 函数 函数执行多少次，取决于正则能成功在字符串匹配多少次  注意：每次用函数的返回值return，来替换正则所匹配到的内容 函数执行的时候打印 arguments  arguments [正则匹配到的内容,分组1，分组2...    index,input]   0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="REPLACE&amp;FOREACH&amp;MAP">
+<meta property="og:url" content="https://dandanliu918.github.io/2017/04/05/REPLACE-FOREACH-MAP/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="replace replace(reg,callback)  参数1 正则 参数2 函数 函数执行多少次，取决于正则能成功在字符串匹配多少次  注意：每次用函数的返回值return，来替换正则所匹配到的内容 函数执行的时候打印 arguments  arguments [正则匹配到的内容,分组1，分组2...    index,input]   0">
+<meta property="og:updated_time" content="2017-04-05T05:52:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="REPLACE&amp;FOREACH&amp;MAP">
+<meta name="twitter:description" content="replace replace(reg,callback)  参数1 正则 参数2 函数 函数执行多少次，取决于正则能成功在字符串匹配多少次  注意：每次用函数的返回值return，来替换正则所匹配到的内容 函数执行的时候打印 arguments  arguments [正则匹配到的内容,分组1，分组2...    index,input]   0">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://dandanliu918.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-REPLACE-FOREACH-MAP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/05/REPLACE-FOREACH-MAP/" class="article-date">
+  <time datetime="2017-04-05T05:49:36.000Z" itemprop="datePublished">2017-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      REPLACE&amp;FOREACH&amp;MAP
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h2><ul>
+<li><p>replace(reg,callback)</p>
+<ul>
+<li>参数1 正则</li>
+<li><p>参数2 函数 函数执行多少次，取决于正则能成功在字符串匹配多少次</p>
+<ul>
+<li>注意：每次用函数的返回值return，来替换正则所匹配到的内容</li>
+<li><p>函数执行的时候打印 arguments </p>
+<pre><code>arguments
+[正则匹配到的内容,分组1，分组2...    index,input]
+  0                          length-2,length-1
+
+var str=&apos;全日制第七期学费:14800&apos;;
+var ary=[&apos;零&apos;,&apos;壹&apos;,&apos;贰&apos;,&apos;叁&apos;,&apos;肆&apos;,&apos;伍&apos;,&apos;陆&apos;,&apos;柒&apos;,&apos;捌&apos;,&apos;玖&apos;];
+var reg=/\d/g;
+str=str.replace(reg,function (s0) {
+        return ary[s0];
+});
+ console.log(str)
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h2><ul>
+<li><p>forEach(callback,this);</p>
+<pre><code>一：
+ 1 参数callback 回调函数 参数this：改变cb中的this指向
+    1）参数callback 取决ary调用次数
+    2）回调函数中的this默认是windows，this可以被forEach的第二个参数修改
+    3）回调函数中三个参数
+      - 1 item 当前项
+      - 2 index 索引
+      - 3 input 原始数组
+    4）回调函数没有返回值
+
+ 2 参数2可传可不传
+ 3 forEach没有返回值
+ 4 forEach这个方法是挂在Array.prototype上
+
+ 二：
+ Array.prototype.myForEach=function(callback,content){
+   content =content || window;
+   if(&apos;forEach&apos; in Array.prototype){
+     this.forEach(callback,content)
+   }
+   for(var i=0;i&lt;this.length;i++){
+     callback(content,this[i],this);
+   }
+ }
+</code></pre></li>
+</ul>
+<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><ul>
+<li><p>原理同forEach</p>
+<pre><code>var  ary=[2,3,44,56];
+var obj={};
+Array.prototype.myMap=function (cb,content) {
+    content=content||window;
+    if(&apos;map&apos; in Array.prototype){
+       return this.map(cb,content);//这里是将map的返回值返回给外面的函数
+    }
+    var ary=[];
+    for(var i=0;i&lt;this.length;i++){
+        var res=cb.call(content,this[i],i,this);
+        ary.push(res);
+    }
+    return ary;
+};
+ary.myMap(function (item,index,input) {
+    console.log(this);
+},obj);
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/04/05/REPLACE-FOREACH-MAP/" data-id="cj6ajxy5w000oamdja3zk99w0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/05/STRING/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          STRING
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/05/NODE/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">NODE</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/13/postName/">Web前端开发</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Color/">CSS3-颜色</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Slected/">CSS3-选择器</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Transition/">CSS3-过渡</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Border/">CSS-Border</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://dandanliu918.github.io/page/3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://dandanliu918.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-NODE" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/05/NODE/" class="article-date">
+  <time datetime="2017-04-05T05:49:13.000Z" itemprop="datePublished">2017-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/05/NODE/">NODE</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="node-安装和在webstrom中配置node代码提示包"><a href="#node-安装和在webstrom中配置node代码提示包" class="headerlink" title="node 安装和在webstrom中配置node代码提示包"></a>node 安装和在webstrom中配置node代码提示包</h2><pre><code>node -v 出现版本号代表成功
+</code></pre><h2 id="查看本机电脑的IP地址：ipconfig"><a href="#查看本机电脑的IP地址：ipconfig" class="headerlink" title="查看本机电脑的IP地址：ipconfig"></a>查看本机电脑的IP地址：ipconfig</h2><pre><code>IPv4地址：192.168.0.21  (局域网内的IP地址)
+子网掩码：255.255.255.0
+默认网关：192.168.0.1
+注意：如果共享一个局域网，子网掩码和网关是相同的
+
+查看自己电脑的MAC地址（物理地址）ipconfig -all
+MAC地址：电脑链接网络后会生成一个世界唯一的编码
+物理地址：30-65-EC-18-CD-BB
+</code></pre><h2 id="DOS窗口常见的命令"><a href="#DOS窗口常见的命令" class="headerlink" title="DOS窗口常见的命令"></a>DOS窗口常见的命令</h2><ul>
+<li><p>创建快捷键</p>
+<p>D:直接进入到D盘目录<br>cd：20161007 进入到当前20161007这个文件夹中<br>cd / 回到根目录<br>cd ./ 回到当前目录<br>cd ../ 回到上一级目录<br>dir 查看当前目录下的所有文件夹和文件</p>
+</li>
+<li><p>本地文件的I/O操作（文件的增删改查）</p>
+<p>mkdir aaa 在当前目录中创建一个叫做aa的文件<br>rmdir aaa 在当前目录中删除aaa的这个文件（前提文件夹是空的）<br>copy con xxx.txt(后缀名随便起) 出现的新一行中编辑自己需要写入的内容，编辑完成后想要保存退出<br>del xx.txt 在当前目录中删除某一个指定文件<br>cls清屏幕<br>exit 退出<br>注意：可以直接在地址栏输入cmd即可进去dos命令或者使用鼠标都可以</p>
+</li>
+</ul>
+<h3 id="1-客户端和服务器的交互模型"><a href="#1-客户端和服务器的交互模型" class="headerlink" title="1.客户端和服务器的交互模型"></a>1.客户端和服务器的交互模型</h3><ul>
+<li><p>1 客户端：用户电脑的浏览器</p>
+<p>1）向服务器发送请求，接收服务器端返回的内容渲染出来<br>2）所有可用向服务器发送请求并且可以解析获取内容都可以被称之为客户端</p>
+</li>
+<li><p>2 服务器端：服务器</p>
+<p>1）接收客户端请求把内容返回给客户端<br>2）所有能够接收请求的并且返回内容的都被之称为服务器端</p>
+<h2 id="当用户在客户端浏览器的地址栏输入一个网站（www-sohu-com）到看到网页-中间经历那些事情？"><a href="#当用户在客户端浏览器的地址栏输入一个网站（www-sohu-com）到看到网页-中间经历那些事情？" class="headerlink" title="当用户在客户端浏览器的地址栏输入一个网站（www.sohu.com）到看到网页 中间经历那些事情？"></a><font color="red">当用户在客户端浏览器的地址栏输入一个网站（www.sohu.com）到看到网页 中间经历那些事情？</font></h2><p>1）通过用户输入的域名到NDS服务器上找到对应的服务器主机IP地址（外网IP）<br>2）通过IP找到对应的服务器<br>3）通过地址栏中的端口号，找到服务端对应的服务<br>4) 到项目目录中找到对应的文件<br>5）服务器端的当前这个服务，会把资源中的源代码返回给客户浏览器<br>6）客户端的浏览器获取源代码 进行解析渲染</p>
+</li>
+</ul>
+<h2 id="如何把自己的博客发布，让别人能看到"><a href="#如何把自己的博客发布，让别人能看到" class="headerlink" title="如何把自己的博客发布，让别人能看到?"></a><font color="red">如何把自己的博客发布，让别人能看到?</font></h2><pre><code>1)买一台服务器（就是比我们平时使用的电脑性能更高的主机而已）阿里云虚拟服务器
+2）把项目资源文件上传到服务中（其实放在服务的某一个磁盘的某一个文件夹即可）ftp上传
+3）服务器购买完后会链接网络，此时服务器会存在一个外网ip地址（或者主机地址：外面的用户可以通过ip找到我们的服务）
+4）购买域名 万网
+5）域名解析 DNS解析：在解析的时候需要填写服务器的主机ip地址，我们把这条记录（域名主机）存放在DNS服务器上（DNS服务器是全世界公用的域名解析服务器，由国际互联网组织管理，任何域名解析都需要记录存放在这里面）
+6）在服务器上创建一个服务，这个服务接收客户端请求，把客户端需要的内容返回给客户端，一台服务器可以创建多个拂去，为了区分这些服务，我们给每一个服务监听一个端口号
+</code></pre><h3 id="2-通过-http-www-zhufengpeixun-cn：80-css-index-css-name-zf-amp-age-8-vido我们得到"><a href="#2-通过-http-www-zhufengpeixun-cn：80-css-index-css-name-zf-amp-age-8-vido我们得到" class="headerlink" title="2 通过 http://www.zhufengpeixun.cn：80/css/index.css?name=zf&amp;age=8#vido我们得到"></a>2 通过 <a href="http://www.zhufengpeixun.cn：80/css/index.css?name=zf&amp;age=8#vido我们得到" target="_blank" rel="external">http://www.zhufengpeixun.cn：80/css/index.css?name=zf&amp;age=8#vido我们得到</a></h3><pre><code>1.URL:统一资源定位符  http://www.zhufengpeixun.cn：80/css/index.css
+2.URI：统一资源标识符 包含： url、urn
+3.URN：统一资源名称 index.css?name=zf&amp;age=8#vido
+</code></pre><h4 id="1）-传输协议（http）"><a href="#1）-传输协议（http）" class="headerlink" title="1）.传输协议（http）"></a>1）.传输协议（http）</h4><pre><code>作用：作为一个传输的载体，可以把内容传输给服务器，也可以帮助服务器把内容传输课客户端（快递员）
+- http 超文本传输协议
+- https http ssl 更加安全的超文本传输协议
+- ftp 文件上传下载的协议 （用于把本地资源文件用ftp上传，传递文件比较大）
+</code></pre><h4 id="2）-域名（www-zhufengpeixun-cn）"><a href="#2）-域名（www-zhufengpeixun-cn）" class="headerlink" title="2）.域名（www.zhufengpeixun.cn）"></a>2）.域名（www.zhufengpeixun.cn）</h4><pre><code>作用：就是设定一个用户便于记忆的名字
+- .com .cn .com.cn .net .org ,gow
+- 一级域名 www.qq.com
+- 二级域名 sports.qq.com
+- 三级域名 kbs.sports.qq.com
+  注意：购买的时候，只需要把一级域名购买下来，二级和三级都是基于一级域名下划分的
+</code></pre><h4 id="3）-端口号（80）"><a href="#3）-端口号（80）" class="headerlink" title="3）.端口号（80）"></a>3）.端口号（80）</h4><pre><code>作用：使用一个数字来区分不同的服务，同一台服务器可以创建多个服务，每一个服务都有自己的端口号
+- 取值范围 0-65535之间
+- 一般项目是不需要用户输入端口号，服务器这会根据传输协议的不一样，给地址看加油不同的默认的端口号
+ http 80
+ https 443
+ ftp 21
+</code></pre><h4 id="4）-客户端需要请求资源文件的路径名称（-css-index-css）"><a href="#4）-客户端需要请求资源文件的路径名称（-css-index-css）" class="headerlink" title="4）.客户端需要请求资源文件的路径名称（/css/index.css）"></a>4）.客户端需要请求资源文件的路径名称（/css/index.css）</h4><pre><code>/css/index.css这里我们请求的是当前项目目录根木块选的css文件中的index.css文件夹
+</code></pre><h4 id="5）-问号传参数（-name-zf-amp-age-8）"><a href="#5）-问号传参数（-name-zf-amp-age-8）" class="headerlink" title="5）.问号传参数（?name=zf&amp;age=8）"></a>5）.问号传参数（?name=zf&amp;age=8）</h4><pre><code>作用：就是把这些信息通过问号传参的方式追加在URL的末尾，把内容传递给服务器
+- 可以通过这种方式传递给服务器指定的内容，从而获取到指定的信息，
+- 通过问号传参数 获取 a和b的页面
+ - a 是列表页面，有十条记录 点击每一条记录都要跳转到b
+ - b 是详情页面 需要展示不同的记录的详细信息 这样的话在b页面需要知道点击谁，点击每一条记录的时候，不仅跳转到b还会给b页面通过问号传参数的方式获取一些标识即可
+</code></pre><h4 id="6）-哈希值-（锚点定位）-vido"><a href="#6）-哈希值-（锚点定位）-vido" class="headerlink" title="6）.哈希值  （锚点定位）#vido"></a>6）.哈希值  （锚点定位）#vido</h4><pre><code>作用:锚点定位， 前端路由 把这个值传递给服务器进行标识
+- 锚点定位：#ID 当前页面加载的时候，直接跳转到ID和我们传递的这个ID相同的元素的位置
+- 前端路由
+- 把这个值传递给服务器进行标识
+</code></pre><h3 id="3-浏览器获取到服务器返回的’源代码’之后，进行渲染和解析"><a href="#3-浏览器获取到服务器返回的’源代码’之后，进行渲染和解析" class="headerlink" title="3 浏览器获取到服务器返回的’源代码’之后，进行渲染和解析"></a>3 浏览器获取到服务器返回的’源代码’之后，进行渲染和解析</h3><pre><code>1）为什么代码放在浏览器就可以呈现一个页面呢？
+2）w3c 万维网联盟 一个指定编程语言的非盈利性组织
+3）浏览器制造商
+  -webkit （v8引擎）Google safri 移动端浏览器
+  Gecko 火狐
+  Trident IE
+  presto 欧朋
+  中国版浏览器 Trident/webkit
+4）web开发者
+</code></pre><h3 id="4-如果想要提高页面第一次打开的速度，页面的性能-（前端优化）"><a href="#4-如果想要提高页面第一次打开的速度，页面的性能-（前端优化）" class="headerlink" title="4.如果想要提高页面第一次打开的速度，页面的性能 （前端优化）"></a>4.如果想要提高页面第一次打开的速度，页面的性能 （前端优化）</h3><pre><code>1 减少http请求
+2 减少资源的文件大小
+3 代码性能化和安全化
+</code></pre><h1 id="NODE"><a href="#NODE" class="headerlink" title="NODE"></a>NODE</h1><h3 id="1-node是一个以webkit或者v8引擎来渲染js的平台环境"><a href="#1-node是一个以webkit或者v8引擎来渲染js的平台环境" class="headerlink" title="1.node是一个以webkit或者v8引擎来渲染js的平台环境"></a>1.node是一个以webkit或者v8引擎来渲染js的平台环境</h3><ul>
+<li>在没有node之前我们的js是一门基于客户端浏览器运行的脚本编程语言，js是前端编程语言</li>
+<li><p>有了node之后，js也可以运行在node环境中，我们可以把node安装在服务器端，这样我们就可以在服务器端处理js，js也可以处理服务器端业务逻辑，js是后台编程语言<br>注意：js是全栈编程语言</p>
+<h3 id="2-js在window和node环境下的区别"><a href="#2-js在window和node环境下的区别" class="headerlink" title="2.js在window和node环境下的区别"></a>2.js在window和node环境下的区别</h3><p>js运行在浏览器中，浏览器提供了很得意内置的属性和方法（window全局对象）<br>js运行在node环境下，提供了很多属性和方法（global全局对象）</p>
+<h3 id="3-如果在node环境下执行js"><a href="#3-如果在node环境下执行js" class="headerlink" title="3.如果在node环境下执行js"></a>3.如果在node环境下执行js</h3><p>1 在web指定的文件中右键 run xxx.js 来运行代码，这样就把js在node环境下执行了，这种方式容易出现缓存，尤其是把执行的文件更换目录后<br>2 找到当前需要执行js所在的文件目录，在这个目录中打开dos窗口，在窗口输入node xxx.js 的命令吧对应的js执行</p>
+<h3 id="4-传统后台语言和node的对比"><a href="#4-传统后台语言和node的对比" class="headerlink" title="4.传统后台语言和node的对比"></a>4.传统后台语言和node的对比</h3><p>传统后台语言：JAVA PHP C#  .NET<br>node作为后台运行的环境优势：</p>
+<ul>
+<li>快 基于v8引擎渲染</li>
+<li>无阻塞I/O操作（异步对文件进行增删改查）</li>
+<li><p>基于事件驱动的单线程异步操作</p>
+<h3 id="5-node中的模块"><a href="#5-node中的模块" class="headerlink" title="5.node中的模块"></a>5.node中的模块</h3></li>
+<li><p>第三方模块 （别人写的我们调取使用）</p>
+<p> 1 下载安装第三方模块，所有的第三方模块都是在npm js.com 上命令窗口执行 npm install 模块 安装 把需要使用的第三方模块安装到项目目录下<br> 2 导入使用 var less=require（’less’）<br> 3 使用 less.rander()<br> 4 如果我们想把less等第三方模块添加到第三方命令中，我们需要把less安装在全局node环境下  </p>
+<ul>
+<li>npm install less -g</li>
+<li>安装成功后 执行less c-可以查看版本号</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>自定义模块 自己写的模块</p>
+<pre><code>在node环境下，我们每创建一个js都可以理解为单独的模块，模块和模块之间的相互调用，他们之间没有冲突
+  1.首先：在B模块中导入A模块
+      A=require(&apos;./A&apos;);//我们即使子啊同一级目录下，我们也要加/，如果不加默认找到node_modules 下的模块，而不是我呢吧自定义模块
+  2.还需要在A模块中把供外面使用的方法暴露出来：
+      module.exports={fn:fn};
+  3.最后在B模块中就可以通过使用：A.fn()执行对应的方法
+
+        A模块：
+        function fn() {
+            console.log(1)
+        }
+        module.exports={fn:fn}
+
+        B模块
+        function fn() {
+            console.log(22)
+        }
+        var A=require(&apos;./A&apos;);
+        A.fn();
+</code></pre></li>
+<li><p>内置模块 node平台提供的模块</p>
+<ul>
+<li>1） node天生提供的模块，node主要应用于服务器端开发，理解服务器端做的事情，理解node模块</li>
+<li><p>2）服务器端要做的事情</p>
+<pre><code>1 创建服务，监听端口号
+2 接收和解析客户端请求
+3 在服务器上把客户端需要的内容找到（文件内容的读取）
+4 把找到的内容返回
+</code></pre></li>
+<li><p>3）常用的内容中模块 http url fs</p>
+<pre><code>1 http:创建服务，监听端口，接收信息，返回内容
+   - var server1=http.createServer(callback); 创建服务
+      callback：这里的回调函数不是服务创建成功就会执行，而是需要客户端向当前的服务器发送当前请求才会执行，只要客户端发送请求，就会被触发执行
+   - server1.listen(port,callBack);给创建的服务监听一个端口号（0-65535）,当服务凤凰街成功也监听成功后就会执行对应的回调函数
+2 服务创建成功后如何向当前服务发送请求
+   - 如果服务在本地，我们可以在浏览器地址栏中输入：http：//loaclhost:[port]来访问
+   - 通过主机的ip地址或者域名来访问，例如：http：//192.168.1.107:80来访问
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h4 id="url模块"><a href="#url模块" class="headerlink" title="url模块"></a>url模块</h4><pre><code>var url=require（&apos;url&apos;）；
+url.parse([string],[boolean]);//用来解析一个URL地址，可以吧地址中的每一部分分别获取到
+ - string：要解析的URL地址字符串
+ - boolean：设定是否把问号传参的值解析为对象，默认是false不解析，写true则为解析
+
+    案例
+              var url=require(&apos;url&apos;);
+              var str=&apos;http://www.zhufengpeixun.com:80/student/index.html?name=zf&amp;age=30#vido&apos;;
+              var result=url.parse(str);//默认第二个参数是false
+              console.log(result)
+
+              var result=url.parse(str,true);//默认第二个参数是false
+              console.log(result)
+
+     结果：一 
+              Url {
+                protocol: &apos;http:&apos;, 协议
+                slashes: true, 是否有斜线
+                auth: null, 作者
+                host: &apos;www.zhufengpeixun.com:80&apos;, 域名+端口
+                port: &apos;80&apos;, 端口
+                hostname: &apos;www.zhufengpeixun.com&apos;,域名
+                hash: &apos;#vido&apos;, HASH值
+                search: &apos;?name=zf&amp;age=30&apos;, 问号传参
+                query: &apos;name=zf&amp;age=30&apos;, 问号传参 不带问号
+                pathname: &apos;/student/index.html&apos;, 请求资源路径名称
+                path: &apos;/student/index.html?name=zf&amp;age=30&apos;,请求资源路径
+                href: &apos;http://www.zhufengpeixun.com:80/student/index.html?name=zf&amp;age=30#vido&apos; }
+
+   结果：二 query是以对象键值对的方式存储的
+              Url {
+                protocol: &apos;http:&apos;,
+                slashes: true,
+                auth: null,
+                host: &apos;www.zhufengpeixun.com:80&apos;,
+                port: &apos;80&apos;,
+                hostname: &apos;www.zhufengpeixun.com&apos;,
+                hash: &apos;#vido&apos;,
+                search: &apos;?name=zf&amp;age=30&apos;,
+                query: { name: &apos;zf&apos;, age: &apos;30&apos; },
+                pathname: &apos;/student/index.html&apos;,
+                path: &apos;/student/index.html?name=zf&amp;age=30&apos;,
+                href: &apos;http://www.zhufengpeixun.com:80/student/index.html?name=zf&amp;age=30#vido&apos; }
+</code></pre><h4 id="Fs-模块"><a href="#Fs-模块" class="headerlink" title="Fs 模块"></a>Fs 模块</h4><ul>
+<li><p>实现对服务器上的文件进行I/O操作的</p>
+<pre><code>var fs=require(&apos;fs&apos;);
+fs.readFileSync/fs.readFile
+1）readFileSync:同步读取文件中的内容  fs.readFileSync(&apos;./index.html&apos;)
+    第一个参数：读取文件路径的地址
+    第二个参数：读取回来的文件内容的编码格式
+    读取出来的内容是字符串格式的
+2）readFile：异步读取文件中的内容 fs.readFile(&apos;./index.html&apos;，function(){})
+读取成功后会触发回调函数执行
+</code></pre></li>
+<li><p>除了读取内容还可以向文件中写入内容</p>
+<pre><code>fs.writeFileSync([pathname],[content],utf-8)
+  第一个参数路径名称
+  第二个参数是需要写入的内容（注意只能是字符串或者buffer格式的教程）
+  第三个参数是编码格式，utf-8
+
+注意：我们当前写入的为覆盖式写入，新写入的内容会覆盖原来的
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/04/05/NODE/" data-id="cj6ajxy5v000namdjqubz5tyc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-MATH-DATE-TIME" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/05/MATH-DATE-TIME/" class="article-date">
+  <time datetime="2017-04-05T05:49:03.000Z" itemprop="datePublished">2017-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/05/MATH-DATE-TIME/">MATH&amp;DATE&amp;TIME</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数学方法"><a href="#数学方法" class="headerlink" title="数学方法"></a>数学方法</h2><pre><code>Math.abs(-1); 绝对值
+Math.max(1,2,3,6,7,8,9); 最大值
+Math.min(2,2,34,5,6); 最小值
+Math.round(5.3); 四舍五入  5 注意下负数
+Math.random(); 获取随机数范围是0-1之间的浮点数
+Math.ceil(5.1); 向上取整 6
+Math.floor(5.9); 向下取整 5
+</code></pre><h3 id="获取n-m之前的随机整数"><a href="#获取n-m之前的随机整数" class="headerlink" title="获取n-m之前的随机整数"></a>获取n-m之前的随机整数</h3><p>  Math.round( Math.random()*(m-n) + n );</p>
+<h2 id="Date方法"><a href="#Date方法" class="headerlink" title="Date方法"></a>Date方法</h2><pre><code>date.getFullYear() 年
+date.getMonth() 月 0-11
+date.getDate() 日
+date.getDay() 星期 0-6
+date.getHours() 小时
+date.getMinutes() 分
+date.getSeconds() 秒
+date.getMilliseconds() 毫秒
+date.getTime() 获取的是date所代表的时间距离1970年1月1日上午8点的毫秒数
+</code></pre><h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><pre><code>作用：在js中负责在单位的时间间隔内重复执行一次多次函数
+window.setTimeout 定时器只执行一次
+window.setInterval 定时器执行多次
+
+清除定时器
+window.clearTimeout
+window.clearInterval
+</code></pre><h4 id="定时器特性："><a href="#定时器特性：" class="headerlink" title="定时器特性："></a>定时器特性：</h4><p>  -1.定时器不会阻塞代码从上向下运行</p>
+<p>  -2.页面多个定时器同时开启时候，那个定时器先到达时间就先执行，不会区分你是第几个定时器</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/04/05/MATH-DATE-TIME/" data-id="cj6ajxy5u000mamdjideqqc4e" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JSONP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/05/JSONP/" class="article-date">
+  <time datetime="2017-04-05T05:48:43.000Z" itemprop="datePublished">2017-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/05/JSONP/">JSONP</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JSONP-跨域"><a href="#JSONP-跨域" class="headerlink" title="JSONP 跨域"></a>JSONP 跨域</h2><h3 id="1-什么叫域"><a href="#1-什么叫域" class="headerlink" title="1.什么叫域"></a>1.什么叫域</h3><ul>
+<li>域就是url中的方案，域名以及端口组合在一起就叫域</li>
+<li>通过location，origin可以获取到当前页面的域</li>
+</ul>
+<h4 id="1-1同域请求"><a href="#1-1同域请求" class="headerlink" title="1.1同域请求"></a>1.1同域请求</h4><ul>
+<li>请求url中方案，域名，端口都和宿主页面中方案，域名，端口相同，那么这个请求就叫同域请求<h4 id="1-2跨域请求"><a href="#1-2跨域请求" class="headerlink" title="1.2跨域请求"></a>1.2跨域请求</h4></li>
+<li>请求url中方案，域名，端口都和宿主页面中方案，域名，端口有任何一个不相同，那么这个请求就叫同域请求<h4 id="1-3同源策略"><a href="#1-3同源策略" class="headerlink" title="1.3同源策略"></a>1.3同源策略</h4></li>
+<li>是浏览器厂商强制添加的一种安全限制，限制了js，在跨域时候无法进行的某些操作，例如无法进行ajax，无法跨域iframe里面的内容</li>
+</ul>
+<h3 id="2-有哪些标签可以进行跨域资源访问"><a href="#2-有哪些标签可以进行跨域资源访问" class="headerlink" title="2.有哪些标签可以进行跨域资源访问"></a>2.有哪些标签可以进行跨域资源访问</h3><ul>
+<li><p>img</p>
+<pre><code>- 特点：会把加载过来的内容强制转成图片显示，如果内容不是合法图片，则为裂图
+- 缺点：虽然可以加载口语资源，但是由于本身特性无法获取跨域资源的内容
+</code></pre><ul>
+<li><p>script</p>
+<ul>
+<li>特点：可以成功加载跨域资源，并且会把跨域资源当成JavaScript标签执行</li>
+<li>缺点：会覆盖已有变量</li>
+</ul>
+</li>
+<li><p>ifram 可以成功加载跨域资源，无法通过js获取到内部资源</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-如何解决变量被覆盖问题？"><a href="#3-如何解决变量被覆盖问题？" class="headerlink" title="3.如何解决变量被覆盖问题？"></a>3.如何解决变量被覆盖问题？</h3><pre><code>1 由浏览器和服务器各自命名改为浏览器统一命名
+2 浏览器在前端定义好变量名通过querstring传递给服务器
+3 server提前定义好变量名的那个key，
+4 server通过定义好的变量名（键值对）获取前端传过来的变量名
+5 server拼接变量名并且返回给浏览器
+</code></pre><h3 id="4-script标签加载完成值如何理解打印？"><a href="#4-script标签加载完成值如何理解打印？" class="headerlink" title="4.script标签加载完成值如何理解打印？"></a>4.script标签加载完成值如何理解打印？</h3><pre><code>1 在全局环境下定义一个函数，并且把函数名通过之前定义好的请求参数发送给服务器
+2 服务器到前端传过来的那个全局函数
+3 拼装一个&quot;全局函数名（数据）&quot;:返回给浏览器
+</code></pre><h3 id="5-为什么叫jsonp"><a href="#5-为什么叫jsonp" class="headerlink" title="5.为什么叫jsonp"></a>5.为什么叫jsonp</h3><pre><code>jsonp的命名的来源是根据服务返回数据的格式产生的&quot;方法名（jsonString）&quot;
+jsonString padding a function name
+jsonString padding
+json padding
+json p
+</code></pre><h3 id="6-jsonp的特点"><a href="#6-jsonp的特点" class="headerlink" title="6.jsonp的特点"></a>6.jsonp的特点</h3><pre><code>1 jsonp通过script src属性加载资源，所以只能是get方法请求（所以具备了get的特点）
+2 在全局下定义了一个函数
+3 服务器需要提供一个请求参数，让前端将定义好的函数名传递给服务器
+4 服务器返回的数据格式必须是：函数名（json字符串）如果不满足这样的格式，那么这个接口就不是jsonp接口
+</code></pre><h3 id="7-跨域（非同源）px-同源"><a href="#7-跨域（非同源）px-同源" class="headerlink" title="7.跨域（非同源）px 同源"></a>7.跨域（非同源）px 同源</h3><ul>
+<li><p>同源：</p>
+<pre><code>第一个地址：当前面的url地址栏（素主页面地址） https：//www.baidu.com
+第二个地址：当页面加载完成后，我们需要从服务器绑定数据的地址（API文档中的数据接口地址）
+</code></pre></li>
+<li><p>跨域</p>
+<pre><code>在跨域环境下请求数据使用ajax不能成功，报错
+跨域下想要请求数据我们需要其他方案：JSONP（查询jsonp以外的跨域方式）
+</code></pre></li>
+<li><p>注意：比较三维度：协议，域名，端口号三者一样为同源，三者不一样即为跨域</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/04/05/JSONP/" data-id="cj6ajxy5s000lamdj2b9hlcev" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-EVENT" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/05/EVENT/" class="article-date">
+  <time datetime="2017-04-05T05:48:33.000Z" itemprop="datePublished">2017-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/05/EVENT/">EVENT</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1，window-onload-等页面所有的内容都加载完成的时候，才开始执行js代码"><a href="#1，window-onload-等页面所有的内容都加载完成的时候，才开始执行js代码" class="headerlink" title="1，window.onload:等页面所有的内容都加载完成的时候，才开始执行js代码"></a>1，window.onload:等页面所有的内容都加载完成的时候，才开始执行js代码</h4><h4 id="2，-只是等DOM加载完成的时候，开始执行js代码-document-ready"><a href="#2，-只是等DOM加载完成的时候，开始执行js代码-document-ready" class="headerlink" title="2，$()只是等DOM加载完成的时候，开始执行js代码  == $(document).ready()"></a>2，$()只是等DOM加载完成的时候，开始执行js代码  == $(document).ready()</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">以上两点总结：</div><div class="line"></div><div class="line">1.Dom0级事件：私有属性，同一个相同行为绑定不同方法会覆盖问题</div><div class="line"></div><div class="line">2.Dom2级事件：公有属性，当前元素所属属性eventTarget这个类的原型上，obj.addEventListener()</div></pre></td></tr></table></figure>
+<h4 id="3-Dom0级事件和Dom二级事件区别"><a href="#3-Dom0级事件和Dom二级事件区别" class="headerlink" title="3,Dom0级事件和Dom二级事件区别"></a>3,Dom0级事件和Dom二级事件区别</h4><p> 1.Dom0级：是元素身上的私有属性 </p>
+<p>  -Dom0级事件，只能发生在事件流的冒泡阶段</p>
+<p> 2.Dom2级：是元素身上的公有属性 存放在eventTarget这个类的原型上</p>
+<h4 id="4-什么是事件？"><a href="#4-什么是事件？" class="headerlink" title="4.什么是事件？"></a>4.什么是事件？</h4><p> -1）鼠标事件MouseEvent<br>    onclick  ondbclick onmouseover  onmouseout onmouseeenter  onmouseleave  onmousetextmenu</p>
+<p> -2）系统事件<br>   onload onscroll onerror  onresize（浏览器大小事件）</p>
+<p> -3）键盘事件keyboardEvent<br>   onkeydown onkeyup onkeypress（前面两个事件的二合一）…</p>
+<p> -4）表单事件<br>    onfocus onblur …</p>
+<h4 id="5-事件对象：就是描述当前所有触发行为的详细信息"><a href="#5-事件对象：就是描述当前所有触发行为的详细信息" class="headerlink" title="5.事件对象：就是描述当前所有触发行为的详细信息"></a>5.事件对象：就是描述当前所有触发行为的详细信息</h4><p>  -1）标准浏览器下，通过形参e来得到事件对象</p>
+<p>  -2）IE6-8下的事件对象，跟形参没有任何关系，通过window.event来获取</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">兼容版本：e=e||window.event</div></pre></td></tr></table></figure>
+<h4 id="6-关于事件对象的详细信息"><a href="#6-关于事件对象的详细信息" class="headerlink" title="6.关于事件对象的详细信息"></a>6.关于事件对象的详细信息</h4><p>  -1）clientX/clientY :当前鼠标落脚点距离可视区左上角的坐标位置 （兼容）</p>
+<p>  -2）pageX/pageY：当前鼠标落脚点距离第一屏左上角的坐标位置 （不兼容）</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">兼容版本：</div><div class="line">  e.pageY=e.clientY+(document.documentElement.scrollTop||document.body.scrollTop)</div><div class="line">  e.pageX=e.clientX+(document.documentElement.scrollLeft||document.body.scrollLeft)</div></pre></td></tr></table></figure>
+<p>  -3)事件源：e.target 当前发生事件的这个元素 （不兼容）</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">兼容版本：e.target||e.srcElement</div></pre></td></tr></table></figure>
+<p>  -4）keyCode：键盘键码</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">keyBoardEvent: 键盘事件对象</div><div class="line">type: &apos;keyup&apos; 事件类型</div><div class="line">keyCode : 按键编码</div><div class="line">Enter : 13</div><div class="line">0-9 : 48-57</div><div class="line">left : 37</div><div class="line">up : 38</div><div class="line">right : 39</div><div class="line">down : 40</div><div class="line">space : 32</div><div class="line">backSpace : 8</div></pre></td></tr></table></figure>
+<p>  -5）阻止默认事件 </p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">版本一</div><div class="line">e.preventDefault?e.prevebtDefault():e.returnValue=false</div><div class="line"></div><div class="line">版本二</div><div class="line">e.preventDefault = e.preventDefault || function ()&#123; e.returnValue = false; &#125;</div></pre></td></tr></table></figure>
+<p>  -6）阻止事件冒泡 :原理 从子元素传播到祖元素</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">版本一</div><div class="line">e.stopPropagation?e.stopPropagation:e.cancelBubble=true;</div><div class="line"></div><div class="line">版本二</div><div class="line"> e.stopPropagation = e.stopPropagation || function ()&#123; e.cancelBubble = true; &#125;</div></pre></td></tr></table></figure>
+<h4 id="7-事件流"><a href="#7-事件流" class="headerlink" title="7.事件流"></a>7.事件流</h4><p>  -1）事件流包含两个阶段：1）捕获阶段（从外向里） 2）冒泡阶段（从里向外）</p>
+<p>  -2）事件流包含三个阶段：1）捕获阶段 2）事件源 e.target 3)冒泡</p>
+<p>  -注意：顺序问题：先捕获再冒泡</p>
+<h4 id="8-事件委托的本质：就是对冒泡的运用"><a href="#8-事件委托的本质：就是对冒泡的运用" class="headerlink" title="8.事件委托的本质：就是对冒泡的运用"></a>8.事件委托的本质：就是对冒泡的运用</h4><h4 id="9-onmouseover和onmouseout不同浏览器解决措施"><a href="#9-onmouseover和onmouseout不同浏览器解决措施" class="headerlink" title="9.onmouseover和onmouseout不同浏览器解决措施"></a>9.onmouseover和onmouseout不同浏览器解决措施</h4><p>  -1）onmouseenter 和 onmouseleave</p>
+<p>  -2）关联元素</p>
+<pre><code>onmouseover=&gt;var oTo=e.relatedTarget||e.fromElement;
+onmouseout=&gt;var oTo=e.relatedTarget||e.toElement;
+obj.contains(xxx)=&gt;布尔数据
+</code></pre>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">例子：</div><div class="line">oSpan.onmouseover=function (e) &#123;</div><div class="line">        e=e||window.event;</div><div class="line">        var oTo=e.relatedTarget || e.fromElement;</div><div class="line">        if(oSpan.contains(oTo)) return;</div><div class="line">        oMark.style.display=&apos;block&apos;;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    oSpan.onmouseout=function (e) &#123;</div><div class="line">        e=e||window.event;</div><div class="line">        var oTo=e.relatedTarget || e.toElement;</div><div class="line">        if(oSpan.contains(oTo)) return;</div><div class="line">        oMark.style.display=&apos;block&apos;;</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/04/05/EVENT/" data-id="cj6ajxy5l000gamdjs1dcsecg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JQUERY" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/05/JQUERY/" class="article-date">
+  <time datetime="2017-04-05T05:48:22.000Z" itemprop="datePublished">2017-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/05/JQUERY/">JQUERY</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="jQ是一个轻量级的库"><a href="#jQ是一个轻量级的库" class="headerlink" title="jQ是一个轻量级的库"></a>jQ是一个轻量级的库</h2><h3 id="JQ的方法整列"><a href="#JQ的方法整列" class="headerlink" title="JQ的方法整列"></a>JQ的方法整列</h3><pre><code>$(&apos;#div&apos;)===$(&apos;#div&apos;) false 两个不同的实例
+var $div=$(&apos;#div&apos;);
+$div.addClass()
+$div.children
+
+注意：使用选择器获取JQ的对象存储起来，以后再使用的时候就不要在重新获取，降低JQ性能的消耗
+
+类选择器：$([selector]).xxx();
+ .add()向现有的JQ对象中追加新的内容，最后合并成一个新的JQ对象
+ .remove() 在页面的DOM结构中移除自己，等统一原生JS中removeChild
+ .addClass/removeClass/hasClass/toggleClass 操作样式类名
+ .animate 动画 类似于我们自己的tween算法动画库
+   eg：
+    $(&apos;.box&apos;).stop().animate({
+       top:10,
+       left:29
+    },1000,&apos;linear&apos;,function(){})
+ .stop/.finish 结束当前在云运行的动画，stop是停留在当前的位置，finish是立马运动到项目的位置
+ .fadeIn / fadeOut /fadeTooggle 
+ .show / hide / toggle
+ .slideUp /slideDown / slideToggle 对应的参数（&apos;slow/fast/[time]&apos;）
+
+ .append /appendTo 向末尾追加
+    容器.append(元素) 元素.appendTo(容器)
+ .prepend / prependTo 向开头追加
+ .insertBefore / insertAfter 追加到某一个元素之前和某一个元素之后
+ .attr 设置（批量设置） 或者获取元素的自定义属性，获取的值都是字符串 
+ .removeAttr 移除
+ .prop 设置（批量设置）或者获取元素的内置属性，一般操作表单元素的属性
+
+ .bind / undbind / trigger
+ .click / mouseover / mouseout / mousemove / blur / focus
+ .on / off 以上所有的事件绑定发你那个是都是会计绑定方式，最后实现的原理是基于 on/off 两个方法来实现的，而且采用的是DOM2事件处理，解决了this，重复，顺序等兼容问题 
+
+ .children 在子代中进行查找
+ .find 在后代中进行查找
+ .filter 在一个集合（同级）中进行二次筛选 
+ .prev / prevAll / next /nextAll /siblings /parent / parents
+
+ .css 设置（批量设置）或者获取元素的所有经过计算的css样式
+ .each
+   - 循环JQ对象中的每一个元素 $link.each(function (index,item){})
+   - 循环数组，对象，类数组的工具方法 $.each(ary,function(index,item){})
+ .empty 清空一个元素中的内容
+ .eq 通过索引获取指定位置的元素，返回的结果依然是JQ对象
+ .get 通过索引获取指定位置的元素，返回的结果是原生JS对象 $link[n]
+
+ .extend
+   - $.fn.extend({fn:function(){}}) 相当于在原型上追加课一个fn方法，使用的时候 $([sel]).fn执行即可&apos;扩展插件&apos;
+   - $.extend({example:function(){}}) 向JQ这个普通对象上扩展方法，此时调用这个方法需要使用 $.example() 即可 &quot;类库的扩展,提供一些常用的方法&quot;
+
+
+   .html/val/text : innerHtml/value,innerText
+   .val 一般是获取表单元素中内容 其余都是获取非表单中的内容，除了可以获取内容，如果传参数也是在设置内容
+   .closest : 获取距离元素最近的在指定选择器的祖先元素
+
+   .index 获取当前元素的索引
+   .innerHeight / innerWidth client系列的
+   .outerHeight / outWidth offset 系列的
+   .offset 获取当前元素距离body的偏移距离
+   .positon 获取当前元素距离父级参照我要的偏移距离
+   .offsetParent 获取父级参照物
+   .width / height 获取/设置元素的宽高
+
+   .serialize / serializeArray 表单序列化
+
+   .Callbacks 发布订阅模式
+   .fire() 执行
+
+   .isArray  函数用判定指定参数是否是一个数组 
+   .isEmptyObject 函数用于判定指定参数是否是一个空对象
+   .isFunction 函数用于判断指定参数是否是一个函数
+   .isNumeric  函数用于判断指定参数是否是一个数字值
+   .isPlainObject 函数用于判断指定参数是否是一个纯粹的对象
+   .isWindow  函数用于判断指定参数是否是一个窗口
+   .isXmlDoc 函数用于判断一个DOM节点是否位于XML文档中，或者其本身就是XML文档。
+</code></pre><h2 id="JQ中单例-发布订阅模式"><a href="#JQ中单例-发布订阅模式" class="headerlink" title="JQ中单例 + 发布订阅模式"></a>JQ中单例 + 发布订阅模式</h2><pre><code>var derRender=(function(){
+ var $demoPlay=$.Callbacks();//制定计划
+
+ //计划1
+ $demoPlay.add(function(){})
+ //计划2
+ $demoPlay.add(function(){})
+ return {
+   init:function(){
+      $.ajax({
+        url:&apos;url&apos;,
+        method:&apos;get&apos;,
+        dataType:&apos;json&apos;,
+        success:function(result){
+           if(result &amp;&amp; result.code==0){
+             var data=result.data;
+             $demoPlay.fire(data);//通知计划执行
+           }
+        }
+      })
+   }
+ }
+})()
+derRender.init();//单例模式执行
+</code></pre><h3 id="JQ方法转JS方法"><a href="#JQ方法转JS方法" class="headerlink" title="JQ方法转JS方法"></a>JQ方法转JS方法</h3><ul>
+<li><p>就是转换的后面加[0]即可</p>
+<p>$(“#id”).val()=$(“#id”)[0].value;<br>$(“#id”).append()=$(“#id”)[0].appendChild();</p>
+</li>
+</ul>
+<h3 id="面试中会遇到问题"><a href="#面试中会遇到问题" class="headerlink" title="面试中会遇到问题"></a>面试中会遇到问题</h3><pre><code>$.each(); // 直接定义在$(jQuery)这个类上的方法，不依赖jQuery对象
+$().each(); // 定义在$的类的原型上的方法，因为通过实例才能调拓展也只能站在这两个位置添加
+$.extend(); // 直接拓展在jQuery类上的
+$.fn.extend(); //  $.fn就是jQuery.prototype  直接拓展在jQuery的prototype上的
+
+function foo(){
+    console.log(&apos;ok&apos;);
+}
+
+$.extend({ // 直接拓展到jQ上
+    foo : foo
+});
+
+$.fn.extend({ // 直接拓展到jQ原型上
+    foo : foo
+});
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/04/05/JQUERY/" data-id="cj6ajxy5r000kamdjwmrkb63z" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HTML5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/05/HTML5/" class="article-date">
+  <time datetime="2017-04-05T05:48:12.000Z" itemprop="datePublished">2017-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/05/HTML5/">HTML5</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JavaScript笔记整理"><a href="#JavaScript笔记整理" class="headerlink" title="JavaScript笔记整理"></a>JavaScript笔记整理</h1><h2 id="一，HTML5语法的变化"><a href="#一，HTML5语法的变化" class="headerlink" title="一，HTML5语法的变化"></a>一，HTML5语法的变化</h2><p> 1.DOCTYPE及字符编码<br> 2.大小写都可以<br> 3.具有布尔值属性<br> 4.部分标签可以省略</p>
+<h2 id="二，语义标签化"><a href="#二，语义标签化" class="headerlink" title="二，语义标签化"></a>二，语义标签化</h2><p>  1.section<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">w3c规范规定section是用来划分网页的,表示页面中的一个内容区块,比如章节,页眉,页脚或页面的其他部分.可以和h1,h2…等其他标签结合起来一起使用,表示文档结构</div></pre></td></tr></table></figure></p>
+<p>  2.article<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">定义可以独立于内容其余部分的完整独立内容块,article元素就是专门为摘要设计的,比如一篇文章</div></pre></td></tr></table></figure></p>
+<p>  3.aside<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">表示article标签内容之外的,与article标签内容相关的辅助信	息,aside元素应该被用于无关内容。</div><div class="line">  1）如果你有你认为应该与主内容分开的内容，那么aside元素是你应该正	确考虑使用的元素。</div><div class="line">  2）询问你自己aside元素中的内容是否可以被独立开来而不会影响文档或	者section中主内容的含义。</div><div class="line">  3）可以用在主要内容相关的引用,侧边栏,广告,nav元素组等</div><div class="line">  4）简单来说 :aside的内容如果被删除，剩下的内容仍然很合理</div></pre></td></tr></table></figure></p>
+<p> 4.hgroup<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">对整个页面/页面中的一个内容区块的标题进行组合</div></pre></td></tr></table></figure></p>
+<p> 5.header<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">一个内容区块或整个页面的头部部分</div></pre></td></tr></table></figure></p>
+<p> 6.footer<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">整个页面或页面区块的尾部</div></pre></td></tr></table></figure></p>
+<p> 7.nav<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">页面中导航链接的部分</div></pre></td></tr></table></figure></p>
+<p> 8.figure<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1)表示一段独立的流内容,一般表示文档主体流内容中的一个独立单元</div><div class="line">2)figure元素经常用于图片</div></pre></td></tr></table></figure></p>
+<p> 9.figcaption<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1)代表一个图例的说明</div><div class="line">2)代表了figure元素的一个标题或者说是其相关解释.</div><div class="line">3)在使用figcaption时，它最好是figure块的第一个或者最后一个元素</div></pre></td></tr></table></figure></p>
+<p> 10.mark<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">高亮显示</div></pre></td></tr></table></figure></p>
+<p> 11.progress<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">进度条</div></pre></td></tr></table></figure></p>
+<p> 12.time<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;time&gt;&lt;/time&gt;用来表现时间或日期</div><div class="line">1)&lt;p&gt; 我们在每天早上 &lt;time&gt;9:00&lt;/time&gt; 开始营业。 &lt;/p&gt;参数</div><div class="line">2)&lt;p&gt; 我在 &lt;time datetime=“2016-02-14T20:00Z” pudate&gt;这一天&lt;/time&gt; 发布了一篇文章。 &lt;/p&gt;</div></pre></td></tr></table></figure></p>
+<p> 13.wbr<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;一行放不下则在这换行&lt;wbr/&gt;能放下则一行显示&lt;/p&gt;</div></pre></td></tr></table></figure></p>
+<p> 14.datalist<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">选项列表与 input 元素配合使用，可以设置提示信息</div><div class="line">&lt;input  type=&quot;text&quot; id=&quot;&quot; list=&quot;shopCars&quot;/&gt;</div><div class="line">&lt;datalist id=&quot;shopCars&quot;&gt; &lt;!--为表单设置可选值--&gt;</div><div class="line">&lt;option value=&quot;aa&quot;&gt;&lt;/option&gt;</div><div class="line">&lt;option value=&quot;ab&quot;&gt;&lt;/option&gt;</div><div class="line">&lt;option value=&quot;c&quot;&gt;&lt;/option&gt;</div><div class="line">&lt;/datalist&gt;</div></pre></td></tr></table></figure></p>
+<p> 15.details<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">用于描述文档或文档某个部分的细节</div><div class="line">	summary标签和details一起使用,表示标题,用户点击标题时会得到细节信息</div><div class="line">	 &lt;details&gt;</div><div class="line">	&lt;summary&gt;111&lt;/summary&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">&lt;li&gt;111&lt;/li&gt;&lt;li&gt;222&lt;/li&gt;&lt;li&gt;333&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;/details&gt;</div></pre></td></tr></table></figure></p>
+<p> 16.output<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">不同类型的输出,比如脚本的输出</div><div class="line">&lt;form oninput=&quot;x.value= parseInt(a.value)+parseInt(b.value)&quot;&gt;</div><div class="line">&lt;input type=&quot;range&quot; id=&quot;a&quot; max=&quot;100&quot; min=&quot;0&quot; value=&quot;50&quot;/&gt;+</div><div class="line">&lt;input type=&quot;number&quot; id=&quot;b&quot; value=&quot;50&quot;/&gt;</div><div class="line">&lt;output name=&quot;x&quot; for=&quot;a b&quot;&gt;150&lt;/output&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="三-新增标签的兼容问题"><a href="#三-新增标签的兼容问题" class="headerlink" title="三 新增标签的兼容问题"></a>三 新增标签的兼容问题</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.HTML5语义化标签在IE6-8下，对于不支持的标签不会有任何的样式,也默认的当成行内元素来出来,所以在样式表里要对这些标签定义一下 它默认的display</div><div class="line">2.通过引入如下js来解决ie9以下新增标签的兼容问题</div><div class="line">3.&lt;!--[if lt IE 9]&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;html5.min.js&quot;&gt;&lt;/script&gt; &lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<h2 id="四，新增input元素的种类"><a href="#四，新增input元素的种类" class="headerlink" title="四，新增input元素的种类"></a>四，新增input元素的种类</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">1) search : 搜索输入框</div><div class="line">2) tel :  电话号码输入框</div><div class="line">3) url  : 输入url地址</div><div class="line">4) email  : 邮件输入框</div><div class="line">5) number  : 数字输入框</div><div class="line">6) rang :特定范围内的数值选择器(通过拖动滚动条改变一定范围内的数字)</div><div class="line">7) color  : 颜色选取器 只在 Opera 和 Blackberry 浏览器</div><div class="line">8) datetime  : 显示完整日期和时间 UTC标准时间</div><div class="line">9) datetime-local  : 显示完整日期和时间</div><div class="line">10) time  :  显示时间</div><div class="line">11) month :  显示月</div><div class="line">12) week  : 显示周</div></pre></td></tr></table></figure>
+<h2 id="五，表单新增属性"><a href="#五，表单新增属性" class="headerlink" title="五，表单新增属性"></a>五，表单新增属性</h2><h4 id="表单新特性"><a href="#表单新特性" class="headerlink" title="表单新特性"></a>表单新特性</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">1）placeholder</div><div class="line">  - 输入框占位符，常用作输入提示，在光标聚焦时，占位符自动消失</div><div class="line">2）autocomplete  :  是否保存用户输入值</div><div class="line">  - 默认为on,关闭提示选择off</div><div class="line">3）autofocus  : 自动聚焦</div><div class="line">4）required  :  此项必填，不能为空</div><div class="line">5）Pattern : 正则验证  pattern=&quot;\d&#123;1,5&#125;“</div><div class="line">6）form 属性 只要加上 form 属性，表单元素可以放到页面的任意位置。</div><div class="line">7）formnovalidate 和 novalidate</div><div class="line"> - 它俩都表示不需要验证表单,直接提交, : novalidate 用于 form 标签；</div><div class="line"> - formnovalidate 用于 submit类型的提交按钮。</div></pre></td></tr></table></figure>
+<h4 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">1）validity对象，通过下面的valid可以查看验证是否通过</div><div class="line">- oText.addEventListener(&quot;invalid&quot;,fn1,false);</div><div class="line">- valid  :  验证不通过时返回false </div><div class="line">- valueMissing  :  输入值为空时</div><div class="line">- typeMismatch :  控件值与预期类型不匹配</div><div class="line">- patternMismatch  :  输入值不满足pattern正则</div><div class="line">- customError 不符合自定义验证</div><div class="line">  - setCustomValidity(); 自定义验证</div></pre></td></tr></table></figure>
+<h2 id="六，全局属性"><a href="#六，全局属性" class="headerlink" title="六，全局属性"></a>六，全局属性</h2><p> 1.data-yourvalue<br>  *.自定义属性 data-name :  dataset.name /data-name-first  :  dataset.nameFirst </p>
+<p> 2.Hidden： 加上这个属性,元素则是不可见状态<br> 3.spellcheck :对你输入的内容纠错<br> 4.tabindex : 按下tab键可以根据设置的顺序进行跳转<br> 5.contenteditable<br>  <em>.<p contenteditable="true">请您留言</p>
+  </em>.表示这块内容是可以编辑的 去掉则不可以修改<br> 6.desginMode<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">window.document.designMode = “on“ </div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/04/05/HTML5/" data-id="cj6ajxy5p000jamdjpkl83ir5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HTML5-CSS3-LESS" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/05/HTML5-CSS3-LESS/" class="article-date">
+  <time datetime="2017-04-05T05:47:58.000Z" itemprop="datePublished">2017-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/05/HTML5-CSS3-LESS/">HTML5&amp;CSS3&amp;LESS</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-移动端开发"><a href="#1-移动端开发" class="headerlink" title="1.移动端开发"></a>1.移动端开发</h2><ul>
+<li>1》原生App开发</li>
+<li><p>2》web App开发 h5页面(html5+css3+javascript) 3》混合模式开发</p>
+<h2 id="2-html5标签和表单"><a href="#2-html5标签和表单" class="headerlink" title="2.html5标签和表单"></a>2.html5标签和表单</h2><ul>
+<li><p>1》html4语义化标签:用合理的标签做合理的事情</p>
+<p>ul li ol dl dt dd p a h1­h6 b(表现形式标签，不是语义化标签<br>)­&gt;strong和em img q(引用) span div(不是语义化标签)</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>2》html5结构标签和功能标签 作用:让页面结构更加清晰，更有利于搜索引擎收录，更能适应未来的浏览器。</li>
+</ul>
+<h2 id="3-新增标签"><a href="#3-新增标签" class="headerlink" title="3.新增标签"></a>3.新增标签</h2><pre><code>section:用来划分网页，表示一个区块
+header:网页/内容区域头部
+footer:网页尾部或内容区块尾部
+nav:通常情况下用于网页的主导航
+main:网页的主体部分
+article:强调区块的完整性和独立性，一般情况下表示一篇文章 aside:主体内容的辅助信息，通常情况下用于侧边栏或广告之类的。去掉之后不会对主体 内容产生影响。
+hgroup:组合标题
+figure:一般用于插图
+figcaption:用来描述插图(图题)
+datalist:
+details:描述文档的详细信息，信息的标签(summary) 
+</code></pre><ul>
+<li><p>兼容问题:IE9以下不兼容，通过ie的条件注释来处理</p>
+<pre><code>&lt;[endif]–!&gt;
+lt小于
+gt大于
+lte小于等于
+gte大于等于
+
+ &lt;!--[if lt IE 9]&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;html5.min.js&quot;&gt;&lt;/script&gt; &lt;![endif]--&gt;
+</code></pre></li>
+</ul>
+<h2 id="4-H5新增的表单元素"><a href="#4-H5新增的表单元素" class="headerlink" title="4.H5新增的表单元素"></a>4.H5新增的表单元素</h2><pre><code>search : 搜索输入框
+tel :  电话号码输入框
+url  : 输入url地址
+email  : 邮件输入框
+number  : 数字输入框
+rang :特定范围内的数值选择器(通过拖动滚动条改变一定范围内的数字)
+color  : 颜色选取器 只在 Opera 和 Blackberry 浏览器
+datetime  : 显示完整日期和时间 UTC标准时间
+datetime-local  : 显示完整日期和时间
+time  :  显示时间
+month :  显示月
+week  : 显示周
+
+placeholder 输入框占位符，常用作输入提示，在光标聚焦时，占位符自动消失
+autocomplete  : 是否保存用户输入值默认为on,关闭提示选择off
+autofocus  : 自动聚焦
+required  :  此项必填，不能为空
+Pattern : 正则验证  pattern=&quot;\d{1,5}“
+form 属性 只要加上 form 属性，表单元素可以放到页面的任意 位置。
+formnovalidate 和 novalidate它俩都表示不需要验证表单,直接提交,  
+novalidate 用于 form 标签；
+formnovalidate 用于 submit类型的提交按钮。
+</code></pre><h3 id="H5表单验证"><a href="#H5表单验证" class="headerlink" title="H5表单验证"></a>H5表单验证</h3><pre><code>validity对象，通过下面的valid可以查看验证是否通过
+oText.addEventListener(&quot;invalid&quot;,fn1,false);
+valid  :  验证不通过时返回false 
+
+ 注意 以下为true
+valueMissing  :  输入值为空时
+typeMismatch :  控件值与预期类型不匹配
+patternMismatch  :  输入值不满足pattern正则
+customError 不符合自定义验证
+setCustomValidity(); 自定义验证
+</code></pre><h3 id="H5自定义属性"><a href="#H5自定义属性" class="headerlink" title="H5自定义属性"></a>H5自定义属性</h3><pre><code>data-yourvalue 自定义属性 
+data-name :  dataset.name
+data-name-first  :  dataset.nameFirst 
+Hidden 加上这个属性,元素则是不可见状态
+spellcheck 对你输入的内容纠错
+tabindex 按下tab键可以根据设置的顺序进行跳转
+
+增加类名 移除 增加/移除
+ div.classList.add(&apos;a1&apos;)
+ div.classList.remove(&apos;a1&apos;)
+ div.classList.toggle(&apos;a1&apos;) 
+</code></pre><h2 id="5-CSS3"><a href="#5-CSS3" class="headerlink" title="5.CSS3"></a>5.CSS3</h2><ul>
+<li>css2选择器：<ul>
+<li>基础选择器：标记选择器 类选择器 id选择器</li>
+<li>复合选择器：交集选择器 并集选择器 后代选择器 相邻选择器</li>
+</ul>
+</li>
+</ul>
+<h3 id="css3-选择器"><a href="#css3-选择器" class="headerlink" title="css3 选择器"></a>css3 选择器</h3><pre><code>:nth-child(n) 第几个元素 从1开始设置
+:nth-child(2n) 偶数元素 从0开始设置
+:nth-child(2n+1) 奇数元素
+:nth-of-type(n)  
+:first-child  -&gt;nth-child(1)
+:first-of-type -&gt;nth-of-type(1)
+:last-child  
+:last-of-type
+:only-child 仅有一个子元素
+:only-of-type 同种类型的子元素只有一个（根据标记名把同种子元素分类，或者在相同的标记名中查找）
+:empty E元素没有子元素（文本，空格，换行）空
+
+否定选择器
+    :not()
+属性选择器
+    E[attr=val]
+    E[attr|=val]  只能等于val  或只能以val-开头
+    E[attr*=val]  包含val字符串
+    E[attr~=val]  属性值有多个,其中有一个是val
+    E[attr^=val]  以val开头
+    E[attr$=val]  以val结尾
+目标伪类选择器
+   :target 用来匹配url指向的目标元素存在url指向该匹配元素时,样式效果才会生效
+伪元素
+    : first-line  匹配第一行文本
+    : first-letter 匹配第一首字符
+    : before 和 : after  DOM元素前后插入额外的内容
+</code></pre><h3 id="径向渐变"><a href="#径向渐变" class="headerlink" title="径向渐变"></a>径向渐变</h3><ul>
+<li><p>radial-gradient<br>由一个点想四周散开 </p>
+<ul>
+<li><p>一个参数 设置径向渐变的形状  ellipse、circle  或设置水平半径,垂直半径</p>
+</li>
+<li><p>设置径向渐变的圆心位置 at[100px 50px | top]</p>
+</li>
+<li>closest-side：最近边； farthest-side：最远边；</li>
+<li>closest-corner：最近角； farthest-corner：最远角 (默认值)</li>
+</ul>
+<h2 id="6-css3-动画效果"><a href="#6-css3-动画效果" class="headerlink" title="6. css3 动画效果"></a>6. css3 动画效果</h2><h4 id="transition-过渡动画"><a href="#transition-过渡动画" class="headerlink" title="transition 过渡动画"></a>transition 过渡动画</h4><ul>
+<li>作用：当css属性发生改变时，由起始值向结束值之间实现平滑过渡的动画效果</li>
+<li>特点：<ul>
+<li>1）起始状态 和 结束状态</li>
+<li>2）需要触发条件 例如js或者伪类或者媒体查询</li>
+</ul>
+</li>
+<li><p>细分属性</p>
+<ul>
+<li>transition-property 过渡属性</li>
+<li>transition-duration 动画执行时间</li>
+<li>transition-timing-function 动画类型（动画运行的速度）<br>ease | linear | ease-in(进入时减速) | ease-out(出去的时加速)|ease-in-out</li>
+<li>transition-delay 延迟时间</li>
+</ul>
+</li>
+<li><p>复合写法</p>
+<ul>
+<li>transition：all 1s ease </li>
+</ul>
+</li>
+</ul>
+<h4 id="transform-变形"><a href="#transform-变形" class="headerlink" title="transform 变形"></a>transform 变形</h4><ul>
+<li><p>2D 变型方法</p>
+<ul>
+<li>transform：rotate（45deg) 正：顺时针 负：逆时针</li>
+<li>transform：scale（x,y）默认值 1 小于1 为缩小 大于1 放大</li>
+<li>transform：skew（x,y）一个参数表示水平方向 两个参数表示垂直</li>
+<li><p>transform：translate（tx,ty）tx（正：往右 负：往左）<br>ty（正：往下 负：往上）</p>
+<ul>
+<li>注意：上面方法可以组合 但是要注意顺序问题</li>
+</ul>
+</li>
+<li>transform-origin：center 默认在元素的中心点上 变形的基准点<br>rotate skew scale 可以改变基准点 但是translate不能改变基准点，永远是元素的中心点</li>
+</ul>
+</li>
+</ul>
+<h4 id="translate"><a href="#translate" class="headerlink" title="translate"></a>translate</h4><p> transform: translate(45px) 水平方向偏移<br> transform: translate(45px, 150px); 水平和竖直方向偏移 s上述方法可组合一起使用，但注意顺序问题<br> transform­origin: 10px 10px;,默认是中心点 共两个参数，表示相对左上角原点的距离，单位px，第一个参数表示相对左上角原点水平方 向的距离，第二个参数表示相对左上角原点垂直方向的距离; 两个参数除了可以设置为具体的像素值，其中第一个参数可以指定为left、center、right，第 二个参数可以指定为top、center、bottom。 rotate,skew,scale可以改变基准点，但是translate不能改变基准点。</p>
+<h4 id="帧动画"><a href="#帧动画" class="headerlink" title="帧动画"></a>帧动画</h4><p> 语法：</p>
+<pre><code>1.通过@keyframes 动画名 设置动画运行的轨迹 @keyframes move{ 0%{百分比指时间的百分比，设置CSS样式}
+100%{}
+}
+2.animation调用声明的帧动画
+animation­name:move;帧动画名称
+animation­duration:1s;动画执行时间 animation­timing­function:ease(默认值)|linear。。运行速度
+animation­delay:1s;延迟时间
+animation­iteration­count:1|infinite(无数次) 动画执行次数 animation­direction:normal|reverse|alternate­reverse 动画运行的方向 animation­play­state:running(默认值)|paused(停止) 动画运行的状态 animation­fill­mode:none(默认值，运行结束后回到起始状态)|backwards(从第一帧开始 运行)|forwards(运行结束后停留在最后一帧)|both(开始时从第一帧开始，结束后停留 在最后一帧) 动画运行结束后的状态
+复合写法:animation:move 1s linear 1s infinite reverse both
+去掉默认值 animation:move 1s 1 1s both;
+</code></pre><h4 id="3D变型效果"><a href="#3D变型效果" class="headerlink" title="3D变型效果"></a>3D变型效果</h4><p>在3D空间里展示必须设置如下两个属性 transform­style:preserver­3d(3D空间里展示)，作用在变型元素的父标签上 perspective:800px 景深效果(近大远小的效果)，作用在变型元素祖先标签上，到Z轴0坐 标位置的距离<br>perspective­origin:center(透视点位置，默认在物体的中心位置上)<br>translate3d( tx , ty, tz )<br>translateX() translateY()<br>translateZ() 先找到正面，往正面的前面移是正值，看到的物体会变大，反之相反 scale3d(sx,sy,sz)<br>scaleX() scaleY() scaleZ() 单个不起作用，必须配合其他变型方法一起使用才起作用。 rotate3d(rx,ry,rz,a)rx,ry,rz向量坐标，a是角度</p>
+</li>
+</ul>
+<h2 id="7-响应式开发"><a href="#7-响应式开发" class="headerlink" title="7.响应式开发"></a>7.响应式开发</h2><h3 id="响应式开发三大技术"><a href="#响应式开发三大技术" class="headerlink" title="响应式开发三大技术:"></a>响应式开发三大技术:</h3><pre><code>1.页面布局采用流式布局:即页面布局不是用固定宽度，而是用相对单位百分比来实现。
+2.弹性布局:主要用CSS3里面的flexbox弹性盒模型。
+3.媒体查询:实现网页自动识别设备特性的关键技术。 
+PC端和移动端页面共用一套页面，小型专题页面或者简单的站点  
+PC端页面和移动端各制作一套页面，复杂的站点，移动端的响应式开发称为移动适配
+</code></pre><h3 id="响应式开发四大规则"><a href="#响应式开发四大规则" class="headerlink" title="响应式开发四大规则:"></a>响应式开发四大规则:</h3><ul>
+<li><p>1.规则一:设置viewport(视口)</p>
+<pre><code>1 layout viewport:布局视口
+width:布局视口
+device­width:设备宽度，手机竖着拿时可视区的宽度 user­scalable:是否允许用户缩放，yes可以
+initial­scale=1.0:起始缩放值
+maximum­scale=1.0,:最大缩放值
+minimum­scale=1.0:最小缩放值
+2visual viewport :可视视口
+3ideal viewport 理想视口 layout viewport=visual viewport
+</code></pre></li>
+<li><p>2.页面布局不使用绝对宽度</p>
+<pre><code>固定单位:像素(px)
+相对单位:百分比(%)、em(相对于父标签字体大小)、rem(相对于根元素字体大小)
+</code></pre></li>
+<li><p>3.引入媒体查询(@media)</p>
+<pre><code>定义:根据不同的条件设置不同的样式，从而使页面渲染成不同的效果
+@media [not|only] type(设备类型:all|screen|print) [and(连接词)] [expr(媒体条件，根据媒 体特性来设置不同的媒体条件)] {rules
+css
+}
+not|only:逻辑关键字,type:媒体类型,expr:媒体表达式,rules:CSS样式
+width 视口宽度
+height 视口高度
+device­width设备屏幕宽度
+device­height设备屏幕高度
+device­pixel­ratio设备像素比(dpr) orientation窗口的方向纵向还是横向，当窗口的高度值大于等于宽度时该特性值为portrait(竖 向)，否则为landscape(横向)
+width和device­width区别:
+width 可视窗口宽度，手机是竖向时，width=device­width，横向时width=device­height; JS中可以通过值e.orientation判断横竖屏，如果90度或者­90则是landscape，0或180就是 portrait
+device­pixel­ratio设备像素比(dpr) 物理像素:各个设备显示器最小的的物理显示单元，各个设备自身的单位(安卓单位叫dpi， ios单位ppi)，即分辨率 设备独立像素:css像素，可以通过相关系统转化成物理像素，所以物理像素和css像素之 间存在一定关系，这个关系就是设备像素比(dpr) dpr直接决定了是高清屏幕还是普通屏幕，如果dpr&gt;=2,是高清屏幕，dpr&lt;2是普通屏幕, 设备像素比dpr = 物理像素/设备独立像素css像素(在某一个方向上,x方向或y方向) 处理图片:图片在移动设备高清显示，所需要的像素点数和物理像素点数一样，在公司基本 切2倍的图， 如果设计师给的设计稿是640，则参照的是iphone5设备的宽度(320)设计的。
+dpr=1, 320 1倍图
+dpr=2 640 2 倍图
+dpr=3, 960 3倍图 如果设计师给的设计稿是750，则参照的是iphone6设备的宽度(375)设计的，
+dpr=1, 375 1倍图
+dpr=2 750 2 倍图
+dpr=3, 1125 3倍图 去适配dpr为2的设备，这个设计稿切出的图片都是2倍的图片，也就是dpr为2的设备都能高 清显示
+</code></pre></li>
+<li><p>4.图片的自适应</p>
+<pre><code>主要通过max­width来控制图片大小，
+ 例如max­width:50%，如果图片宽度大于50%，则显 示成50%，如果小于50%，显示成图片自身的宽度 
+最优最麻烦的方式是，加载不同倍数的图片，可节省流量，并提高加载速度。
+</code></pre></li>
+</ul>
+<h2 id="8-less语法"><a href="#8-less语法" class="headerlink" title="8.less语法:"></a>8.less语法:</h2><ul>
+<li><p>页面准备工作</p>
+<pre><code>&lt;script&gt;
+    var less={
+        &quot;env&quot;:&quot;development&quot;,//当前模式是开发模式情况下
+        &quot;poll&quot;:1000,//在监视模式下自动刷新的功能 查看代码的时间间隔
+    }
+&lt;/script&gt;
+&lt;script src=&quot;js/less-2.5.3.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    less.watch();//监听
+&lt;/script&gt;
+</code></pre></li>
+<li><p>同页面之间的引入</p>
+<pre><code>@import (reference) &quot;public&quot;;//public的方法不会再index.less里输出
+</code></pre></li>
+</ul>
+<ul>
+<li><p>语法</p>
+<pre><code>变量 @color：#fff；
+继承 &amp;:extend(.a1)
+颜色变浅 lighten（@color，40%）
+颜色加深 darken（@color，40%）
+函数 .transition(@property:all,@timingFuction,@duration:1s){
+    transition:@arguments 或:
+    transition:@property
+   }
+
+&amp; 表示父级
+Math函数
+  round(1.67); // returns `2`
+  ceil(2.4);   // returns `3`
+  floor(2.6);
+转为百分比 percentage(0.5); // returns `50%`
+加法计算 margin-top: unit((64-35)/2,px);
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/04/05/HTML5-CSS3-LESS/" data-id="cj6ajxy5m000iamdjfq6cz9ru" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/05/git/" class="article-date">
+  <time datetime="2017-04-05T05:47:35.000Z" itemprop="datePublished">2017-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/05/git/">git</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="git的使用"><a href="#git的使用" class="headerlink" title="git的使用"></a>git的使用</h1><p>   功能：类似网盘 <a href="http://ohmyz.sh/" target="_blank" rel="external">http://ohmyz.sh/</a></p>
+<h3 id="mac安装"><a href="#mac安装" class="headerlink" title="mac安装"></a>mac安装</h3><ul>
+<li>先安装homebrew </li>
+<li>brew install git</li>
+</ul>
+<h3 id="使用git"><a href="#使用git" class="headerlink" title="使用git"></a>使用git</h3><ul>
+<li><p>1.告诉git你是谁？</p>
+<pre><code>git config --global user.name zhufengzhufeng
+git config --global user.email 8877892@qq.com
+
+注意：没有设置则不能提交（只能设置一次）
+
+git config list 查看配置列表
+</code></pre></li>
+<li><p>2.git的作用 版本控制（文件）</p>
+<pre><code>1 初始化使用git的位置
+2 mkdir useGit 创建一个 useGit 文件夹 mkdir useGit/aa/bb -p 循环创建
+3 cd useGit/ 进入到这个文件夹内
+4 rm -rf a 循环删除（一旦删除永远找回）
+5 ls 查看
+6 ls -al 查看目录下所有文件
+7 git init 初始化一个空的厂库
+</code></pre></li>
+</ul>
+<ul>
+<li><p>3.文件编辑</p>
+<pre><code>1 touch 1.txt 创建文件
+2 vi 1.txt 编辑进入文件 出现 -&gt; 用 i键 insert进入  编辑代码
+3 esc + :wq 保存并且退出
+4 esc + :q! 退出
+5 cat 1.txt 查看文件内容是否存在
+</code></pre><ul>
+<li><p>4.将文件进行提交</p>
+<p>   1 将文件加入到暂存区中（不能直接提交到历史去）<br>   2 git add -A/./1.txt 添加所有文件名<br>   3 git status/ 查看状态<br>   4 git stage 暂存区<br>   5 git commit -m’输入说明’<br>   6 git log 查看提交日志</p>
+</li>
+<li><p>5.代码比较 查看代码 增加和减少</p>
+<p>   1 git diff 比较工作区域和暂存区域<br>   2 git diff master 当前工作区域和历史区域比较（master：是根据分支名改变而变）<br>   3 git diff –cached  暂存区域和历史区域比较 </p>
+</li>
+<li><p>6.暂存区和工作区的文件修改</p>
+<p>   1 git checkout 1.txt 把暂存区域的源文件拉回来到工作区  并且覆盖本地的文件<br>   2 git reset HEAD 1.txt 将暂存区的中内容移除 返回最初的源文件</p>
+</li>
+<li><p>7.回到过去 &amp;&amp; 回到未来</p>
+<ul>
+<li><p>回到过去<br>1 git log 获取id（b0d6c6e1:git log 查看日志：只能查看当前版本之前的内容）<br>2 git reset –hard b0d6c6e1  回到过去 </p>
+</li>
+<li><p>回到未来<br>1 git reflog 查看你所有的日志情况<br>2 git reset –hard b0d6c6e1 回到未来</p>
+<p>git log –grep zz 根据参数名搜索</p>
+</li>
+</ul>
+</li>
+<li><p>8.git的分支管理</p>
+<ul>
+<li>主干：通过主干建立一个分支，当代码完成后确认无误后再合并到主干上</li>
+<li><p>创建分支：会在当前代码下克隆一份一模一样的</p>
+<pre><code>1 git branch 查看分支
+2 git branch dev 创建分支
+3 git checkout dev 切换分支
+4 git branch -d/D dev 删除分支 
+5 git checkout -b dev 创建并且切换分支
+</code></pre></li>
+<li><p>要将内容提交到dev分支上管理，否则只是工作区的内容</p>
+</li>
+<li><p>在master合并分支  </p>
+<pre><code>1 git checkout  master 进入主分支
+2 git merge dev 合并分支
+</code></pre></li>
+</ul>
+</li>
+<li><p>9 主干和分支一模一样，如何解决这个冲突？</p>
+<p>   1 在文件中保留最后想留下的结果<br>   2 提交最终结果</p>
+<p>   git commit -a -m’dj’ 提交连写（首次提交的文件不能使用这种方式提交）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="把本地文件上传到github-上"><a href="#把本地文件上传到github-上" class="headerlink" title="把本地文件上传到github 上"></a>把本地文件上传到github 上</h2><pre><code>- 如果线上有内容，先将线上的拿下来，再次提交 
+- 初始化厂库 git init 
+</code></pre><ul>
+<li><p>origin   </p>
+<pre><code>1 创建readme.md文件
+2 echo &quot;#hello&quot; &gt; readme.md 创建文件      
+3 touch .gitignore  忽略文件(里面都是我们不需要的文件)
+</code></pre></li>
+<li><p>添加远程仓库</p>
+<pre><code>1 git init
+2 git add README.md 添加 暂存区
+3 git commit -m &quot;first commit&quot; 提交 历史区
+4 git remote add origin https://github.com/dandanliu918/myread.git 添加
+5 git push -u origin master 推送 -u:upstream 
+6 git remote -v 查看通道
+</code></pre></li>
+<li><p>部署静态的gthub页面(就是把自己本地文件上传到git)</p>
+<pre><code>1 先建一个仓库hello 
+2 git init  初始化本地仓库
+3 git checkout -b gh-pages 分支名不能更改
+4 git add . 添加到暂存区
+5 git commit -m&apos;hello&apos; 提交到历史区
+6 git remote add origin+ 地址
+7 git push origin gh-pages 推送
+
+8 然后到git上点击settings 里面找到https://dandanliu918.github.io/hello/
+</code></pre></li>
+<li><p>交作业流程</p>
+<pre><code>1 组员fork组长的项目（不能fork多次）
+2 git clone +  组长 + 文件夹名字
+3 git add . 推送本地文件
+4 git commit -m&apos;&apos;
+5 git push origin master
+6 new pull request
+</code></pre></li>
+<li><p>组长给组员开通权限</p>
+<pre><code>1 自己的仓库下 - setings -coll
+</code></pre></li>
+<li><p>开通权限后组员操作</p>
+<pre><code>1 组员将代码克隆下来
+2 找到自己组放自己的文件夹
+3 git add .
+4 git commit -m&apos;xxx作业&apos;
+5 git pull origin master
+6 git push origin master
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/04/05/git/" data-id="cj6ajxy63000uamdj52w171dy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Dom" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/05/Dom/" class="article-date">
+  <time datetime="2017-04-05T05:47:26.000Z" itemprop="datePublished">2017-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/05/Dom/">Dom</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Dom-（documen-object-molder-）"><a href="#Dom-（documen-object-molder-）" class="headerlink" title="Dom （documen object molder ）"></a>Dom （documen object molder ）</h1><h2 id="一-DOM常用的获取方法"><a href="#一-DOM常用的获取方法" class="headerlink" title="一.DOM常用的获取方法"></a>一.DOM常用的获取方法</h2><p>   1.通过Dom的方法取回来的元素都是一个对象数据类型的</p>
+<h5 id="1-通过id获取元素"><a href="#1-通过id获取元素" class="headerlink" title="1.通过id获取元素"></a>1.通过id获取元素</h5><pre><code>1. 只能通过document.getElementById来调用，其他的任何dom元素都不行
+2 如果页面内不存在这个id默认获取回来的null
+3 如果页面内存在两个相同的id那么默认获取第一个
+4 在某些低版本ie浏览器name可能会当做id来用,name属性和id不要写成一样的
+5 尽量不要写大小写不同的id
+
+var div1 = document.getElementById(&apos;div1&apos;);
+</code></pre><h5 id="2-通过标签名获取元素"><a href="#2-通过标签名获取元素" class="headerlink" title="2.通过标签名获取元素"></a>2.通过标签名获取元素</h5><pre><code>1 通过标签获取元素获取回来的是一组元素,即使这一组元素中只有一个li。也不会默认选中第一个，如果想获取通过索引值0来拿
+ 2  这个方法是可以规定范围的，也就是在具体的某个范围内获取。比如div1.getElementsByTagName就是在div1这个范围内获取
+
+ var div1 = document.getElementById(&apos;div1&apos;); //先获取到最外层的div1
+ var lis = div1.getElementsByTagName(&apos;li&apos;); //获取div1这个范围内所有的li标签,div1可以理解为一个范围
+ console.log(lis); // 类数组：有length属性，有索引
+</code></pre><h5 id="3-通过类名获取元素-不兼容在IE6-8"><a href="#3-通过类名获取元素-不兼容在IE6-8" class="headerlink" title="3.通过类名获取元素  不兼容在IE6-8"></a>3.通过类名获取元素  不兼容在IE6-8</h5><pre><code>1  和标签名一样类名字也可以出现多次，所以回来的也是一组元素。和标签一样也可以给规定范围，比如div1.getElementsByClassName(&apos;ul&apos;) 获取div1这个范围内所有类名为ul的。和其他没有关系
+
+ var uls = div1.getElementsByClassName(&apos;ul&apos;)[0]; //[ul]这才是拿到一组中的一个
+    console.log(uls);
+</code></pre><h5 id="4-通过name获取元素"><a href="#4-通过name获取元素" class="headerlink" title="4.通过name获取元素"></a>4.通过name获取元素</h5><pre><code>1 一般应用于表单元素  input
+2 在标准浏览器内给div添加了一个name属性虽然没用，但是可以通过name来获取元素，在ie9以下就不可以
+ var names = document.getElementsByName(&apos;name&apos;);
+     console.log(names.length);
+</code></pre><h5 id="5-获取html和body的方式：-都是标签可以通过标签名字来获取"><a href="#5-获取html和body的方式：-都是标签可以通过标签名字来获取" class="headerlink" title="5.获取html和body的方式： 都是标签可以通过标签名字来获取"></a>5.获取html和body的方式： 都是标签可以通过标签名字来获取</h5><pre><code>html:  document.documentElement就是html
+body:  document.body 就是body
+
+获取浏览器可视窗口的宽度和高度 
+document.documentElement.clientWidth||document.body.clientWidth
+document.documentElement.clientHeight||document.body.clientHeight
+</code></pre><h5 id="6-document-querySelector-document-querySelectorAll-适用于移动端"><a href="#6-document-querySelector-document-querySelectorAll-适用于移动端" class="headerlink" title="6.document.querySelector/document.querySelectorAll 适用于移动端"></a>6.document.querySelector/document.querySelectorAll 适用于移动端</h5><pre><code>var  div1 =  document.querySelector(&apos;#div1&apos;);
+    console.log(div1);
+    var div1 = document.querySelectorAll(&apos;#div1 li&apos;);
+    console.log(div1);
+    var input = document.querySelectorAll(&apos;input[type=checkbox][name=hobby]&apos;);
+    console.log(input);
+</code></pre><h2 id="二-DOM元素的增删改查"><a href="#二-DOM元素的增删改查" class="headerlink" title="二.DOM元素的增删改查"></a>二.DOM元素的增删改查</h2><h5 id="1-appendChild-父级元素-appendChild-子集元素-并且默认添加到末尾"><a href="#1-appendChild-父级元素-appendChild-子集元素-并且默认添加到末尾" class="headerlink" title="1.appendChild 父级元素.appendChild(子集元素) 并且默认添加到末尾"></a>1.appendChild 父级元素.appendChild(子集元素) 并且默认添加到末尾</h5><pre><code>div1.appendChild(p); //把刚刚创建的p标签添加到div1中,p是div1的最后一个子元素
+</code></pre><h5 id="2-insertBefore-要插入的元素-要插入到哪个元素的前面"><a href="#2-insertBefore-要插入的元素-要插入到哪个元素的前面" class="headerlink" title="2. insertBefore(要插入的元素,要插入到哪个元素的前面)"></a>2. insertBefore(要插入的元素,要插入到哪个元素的前面)</h5><pre><code>var span = document.createElement(&apos;span&apos;);
+   div1.insertBefore(span,ul1); //把刚刚创建的span标签插入到ul1前面，并且只能是父级元素div1来执行
+</code></pre><h5 id="3-removeChild-删除页面内的dom元素"><a href="#3-removeChild-删除页面内的dom元素" class="headerlink" title="3.removeChild 删除页面内的dom元素"></a>3.removeChild 删除页面内的dom元素</h5><pre><code>div1.removeChild(ul1); //在div1内把ul移除掉
+</code></pre><h5 id="4-replaceChild-new-old"><a href="#4-replaceChild-new-old" class="headerlink" title="4.replaceChild(new,old)"></a>4.replaceChild(new,old)</h5><pre><code>var img = document.createElement(&apos;img&apos;);
+    div1.replaceChild(img,ul1);
+</code></pre><h5 id="5-要克隆的元素-cloneNode-true"><a href="#5-要克隆的元素-cloneNode-true" class="headerlink" title="5.要克隆的元素.cloneNode(true)"></a>5.要克隆的元素.cloneNode(true)</h5><pre><code>如果参数是true意思是把所有的子孙后代都带着一起克隆
+var newDiv1 = div1.cloneNode(true); //克隆了一份div1
+document.body.appendChild(newDiv1); //把刚刚克隆的div1添加到body末尾
+</code></pre><h5 id="6-document-createElement-‘div’-创建元素-一般和appendChild一起使用"><a href="#6-document-createElement-‘div’-创建元素-一般和appendChild一起使用" class="headerlink" title="6.document.createElement(‘div’) 创建元素 一般和appendChild一起使用"></a>6.document.createElement(‘div’) 创建元素 一般和appendChild一起使用</h5><h2 id="三-DOM元素内的增加修改，删除，修改"><a href="#三-DOM元素内的增加修改，删除，修改" class="headerlink" title="三.DOM元素内的增加修改，删除，修改"></a>三.DOM元素内的增加修改，删除，修改</h2><pre><code>setAttribute 设置属性
+getAttribute  获取属性 如何获取的不存在 返回null
+removeAttribute 移除属性
+</code></pre><h2 id="四-节点关系"><a href="#四-节点关系" class="headerlink" title="四.节点关系"></a>四.节点关系</h2><pre><code>node:节点的意思, 所有的元素，换行，注释，文本等都可以叫做节点
+parentNode: 父节点
+childNodes: 所有的子节点（有可能有注释，换行，文本，元素只是其中的一部分）
+children:所有的元素(是元素)子节点, 不兼容
+
+children兼容版本
+  function children（ele）{
+   var childNodes=ele.childNodes;
+   var ary=[];
+   for(var i=0;i&lt;childNodes.length;i++){
+      var curNode=childrenNode[i];
+      if(curNode.nodeType==1){
+       ary.push(curNode)
+      }
+   }
+   return ary;
+  }
+</code></pre><h4 id="节点和文本的关系"><a href="#节点和文本的关系" class="headerlink" title="节点和文本的关系"></a>节点和文本的关系</h4><pre><code>                 元素div1       文本         注释          document
+
+nodeType(节点类型)     1          3           8             9
+
+nodeName(节点名称)   大写标签名   #text      #comment     #document
+
+nodeValue(节点值)     null      文本内容     注释内容       null
+</code></pre><h4 id="节点关系"><a href="#节点关系" class="headerlink" title="节点关系"></a>节点关系</h4><pre><code>previousSibling  上一个哥哥节点(是节点)
+previousElementSibling 上一个元素(是元素)哥哥节点  不兼容
+
+兼容版本
+  function prevEleSibling(ele) {
+   var prev = ele.previousSibling;
+    while( prev &amp;&amp; prev.nodeType !== 1){
+    prev = prev.previousSibling;
+    }
+            return prev;
+        }
+
+
+nextSibling  下一个弟弟节点 (是节点)
+nextElementSibling 下一个元素弟弟节点(是元素) 不兼容
+
+
+firstChild 第一个子节点(是节点)
+firstElementChild 第一个元素子节点(是元素) 不兼容
+
+lastChild 最后一个子节点(节点)
+lastElementChild 最后一个元素子节点(是元素) 不兼容
+</code></pre><h4 id="使用while循环需要注意的几点"><a href="#使用while循环需要注意的几点" class="headerlink" title="使用while循环需要注意的几点"></a>使用while循环需要注意的几点</h4><pre><code>1,循环的条件移动要注意，不要写成死循环
+2，写循环的时候，循环的条件注意更换或者迭代，保证循环的条件在不断迭代的过程中的终点值会出 现 false 而模拟prevEleSibling的时候，利用的是previousSibling总有一个时刻是null
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/04/05/Dom/" data-id="cj6ajxy5j000eamdjivpc89xx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-call-apply-bind" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/05/call-apply-bind/" class="article-date">
+  <time datetime="2017-04-05T05:47:15.000Z" itemprop="datePublished">2017-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/05/call-apply-bind/">call&amp;apply&amp;bind</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Call（）-作用：改变this指向"><a href="#Call（）-作用：改变this指向" class="headerlink" title="Call（） 作用：改变this指向"></a>Call（） 作用：改变this指向</h2><ul>
+<li>call第一个参数：改变call点前面的函数中this指向</li>
+<li>call的第二个参数开始，对函数中的形参从左往右的赋值<br>注意：call继承：把父类私有属性和方法，都继承给了子类私有的</li>
+</ul>
+<p>  注意：js中有严格模式和非严格模式区别’use strict’</p>
+<pre><code>1.call 方法中的this如果严格模式下即使是null和undefined 那么也直接使用，非严格模式下都是Window
+2.如果call没有写参数，严格模式下undefined，非严格模式下是Window
+3.在严格模式下自运行函数中的this是undefined，非严格模式下是window
+4.在严格模式下函数执行时候如果&apos;.&apos;前面没有，那么this就undefined
+
+call用法：
+1.fn1.call（fn2） 最后是fn1执行
+2.fn1.call.call.call.call(fn2) 最后就是fn2执行，如果fn2没有传一个函数那么久报错
+</code></pre><h2 id="apply（）-作用：改变this指向"><a href="#apply（）-作用：改变this指向" class="headerlink" title="apply（） 作用：改变this指向"></a>apply（） 作用：改变this指向</h2><ul>
+<li>apply的第一个参数也是用来修改调用apply那个函数中的this的</li>
+<li><p>apply的第二个参数是一个数组，是把数组里的每一项当作参数分别传给调用apply的函数</p>
+<p>ps:其实就是传参的方式不同。call是一个个的，apply是一个数组</p>
+</li>
+</ul>
+<pre><code>function sum(num1,num2){
+      console.log(this);
+      console.log(num1 + num2);
+  }
+  sum(100,200); //window 300
+  sum.call(null,100,200); //window 300
+  sum.apply(document.body,[100,200]); // body 300
+</code></pre><h3 id="bind（）只改变this指向"><a href="#bind（）只改变this指向" class="headerlink" title="bind（）只改变this指向"></a>bind（）只改变this指向</h3><ul>
+<li>bind方法修改完this之后并不执行，只是返回一个已经修改过this的新函数</li>
+<li><p>bind方法的兼容是有问题，bind方法只是先处理了this然后返回一个新函数</p>
+<pre><code>var res = sum.bind(document.body);
+console.log(res === sum); // false res就是修改过this的新函数
+res(300,400); // 700
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/04/05/call-apply-bind/" data-id="cj6ajxy5z000samdj4629g1eb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/13/postName/">Web前端开发</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Color/">CSS3-颜色</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Slected/">CSS3-选择器</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Transition/">CSS3-过渡</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Border/">CSS-Border</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

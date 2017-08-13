@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CSS3-变形 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CSS3变形属性及函数transform 属性 none | transform-function | transform-function2D transformtranslate() 移动元素 可以根据X轴和Y轴坐标重新定位元素位置     - translateX（）    - translateY（） scale 缩小或者放大元素 可以使用元素尺寸发生变化    - scaleX()">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3-变形">
+<meta property="og:url" content="https://dandanliu918.github.io/2017/06/15/CSS-Transform/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CSS3变形属性及函数transform 属性 none | transform-function | transform-function2D transformtranslate() 移动元素 可以根据X轴和Y轴坐标重新定位元素位置     - translateX（）    - translateY（） scale 缩小或者放大元素 可以使用元素尺寸发生变化    - scaleX()">
+<meta property="og:updated_time" content="2017-06-15T16:02:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3-变形">
+<meta name="twitter:description" content="CSS3变形属性及函数transform 属性 none | transform-function | transform-function2D transformtranslate() 移动元素 可以根据X轴和Y轴坐标重新定位元素位置     - translateX（）    - translateY（） scale 缩小或者放大元素 可以使用元素尺寸发生变化    - scaleX()">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://dandanliu918.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS-Transform" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/15/CSS-Transform/" class="article-date">
+  <time datetime="2017-06-15T15:52:53.000Z" itemprop="datePublished">2017-06-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS3-变形
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CSS3变形属性及函数"><a href="#CSS3变形属性及函数" class="headerlink" title="CSS3变形属性及函数"></a>CSS3变形属性及函数</h2><h3 id="transform-属性-none-transform-function-transform-function"><a href="#transform-属性-none-transform-function-transform-function" class="headerlink" title="transform 属性 none | transform-function | transform-function"></a>transform 属性 none | transform-function | transform-function</h3><h4 id="2D-transform"><a href="#2D-transform" class="headerlink" title="2D transform"></a>2D transform</h4><pre><code>translate() 移动元素 可以根据X轴和Y轴坐标重新定位元素位置 
+   - translateX（）
+   - translateY（）
+scale 缩小或者放大元素 可以使用元素尺寸发生变化
+   - scaleX()
+   - scaleY()
+rotate() 旋转元素
+skew()元素倾斜
+matrix（） 定义矩阵变形 基于X轴和Y轴坐标重新定位元素位置
+</code></pre><h4 id="3D-transform"><a href="#3D-transform" class="headerlink" title="3D transform"></a>3D transform</h4><pre><code>translate3d() 移动元素 用来指定一个3d 变形位移量
+translate（） 指定3d位移在z轴的位移量
+scale3d（） 缩放一个元素
+scaleZ() 指定Z轴缩放向量
+rotate3d() 指定元素具有一个三维旋转的角度
+rotateX() rotateY() rotateZ（） 让元素具有一个旋转角度
+perspective() 指定一个透视投影矩阵
+matrix 3d（） 定义矩阵变形
+</code></pre><h4 id="transform-origin-设置原点"><a href="#transform-origin-设置原点" class="headerlink" title="transform-origin 设置原点"></a>transform-origin 设置原点</h4><pre><code>x-offset 水平X轴偏移量
+offset-keyword top right left center  设置偏移量
+y-offset 垂直Y轴偏移量 （负值）
+x-offset-keyword left center right 中的一个 水平X轴的偏移量
+y-offset-keyword top center bottom 中的一个 垂直Y轴的偏移量
+z-offset 设置变形中的远离用户研究视点的距离 默认值z=0 取值length 百分比无效
+</code></pre><h4 id="transform-style"><a href="#transform-style" class="headerlink" title="transform-style"></a>transform-style</h4><pre><code>flat 默认值 表示子元素在2d 平面呈现
+</code></pre><h4 id="preserve-3d-所有子元素在3d-空间呈现"><a href="#preserve-3d-所有子元素在3d-空间呈现" class="headerlink" title="preserve-3d 所有子元素在3d 空间呈现"></a>preserve-3d 所有子元素在3d 空间呈现</h4><pre><code>perspective 用来设置用户和元素3d空间的z平面之间的距离
+   - none 表示无限的角度来看3d物体 
+   - length 接受一个长度大于0 的值 其单位值不能用百分比 值越大 角度出现的越远 值越小 3d效果越明显 也就是眼镜越靠近真3d
+</code></pre><h4 id="perspective-origin-主要来决定-perspective属性的源点角度"><a href="#perspective-origin-主要来决定-perspective属性的源点角度" class="headerlink" title="perspective- origin 主要来决定 perspective属性的源点角度"></a>perspective- origin 主要来决定 perspective属性的源点角度</h4><pre><code>- 默认值 50% 50%
+ 第一个长度
+    left 包含框X轴方向长度的0%
+    center 中间点
+    right 长度100%
+  第二个长度
+    top 在包含框的Y轴方向长度0%
+    center 中间点
+    bottom 长度100%
+</code></pre><h4 id="backface-visibility-决定元素旋转背面是否可见"><a href="#backface-visibility-决定元素旋转背面是否可见" class="headerlink" title="backface-visibility 决定元素旋转背面是否可见"></a>backface-visibility 决定元素旋转背面是否可见</h4><pre><code>visible 默认值 反面可见
+hiiden 反面不可见
+</code></pre><h4 id="3D-变形"><a href="#3D-变形" class="headerlink" title="3D 变形"></a>3D 变形</h4><ul>
+<li><p>位移</p>
+<ul>
+<li>translateZ() z轴的向量位移长度</li>
+<li>translate3d()  tx 横 ty 纵 tz z轴</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>旋转</p>
+<ul>
+<li>rotateX() </li>
+<li>rotateY() </li>
+<li>rotateZ() </li>
+<li>rotate3d(x, y ,z,a) 0-1 围绕X轴旋转的矢量值 0-1 围绕Y轴旋转的矢量值 0-1 围绕Z轴旋转的矢量值 a 角度值 用来指定元素在3d空间旋转的角度，值为正值 顺时针旋转 负值逆时针旋转</li>
+</ul>
+</li>
+<li><p>缩放</p>
+<ul>
+<li>scaleZ()</li>
+<li>scale3d() sx 横 sy 纵 sz z轴</li>
+</ul>
+</li>
+<li><p>矩阵</p>
+<ul>
+<li>matrix3d()</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/06/15/CSS-Transform/" data-id="cj6ajxy5f000bamdj4phv3c2a" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/15/css-Columns/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CSS3-多列布局
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/15/CSS-Animation/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS-Animation</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/13/postName/">Web前端开发</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Color/">CSS3-颜色</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Slected/">CSS3-选择器</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Transition/">CSS3-过渡</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Border/">CSS-Border</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

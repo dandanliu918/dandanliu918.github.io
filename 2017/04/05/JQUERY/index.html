@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JQUERY | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="jQ是一个轻量级的库JQ的方法整列$(&amp;apos;#div&amp;apos;)===$(&amp;apos;#div&amp;apos;) false 两个不同的实例 var $div=$(&amp;apos;#div&amp;apos;); $div.addClass() $div.children  注意：使用选择器获取JQ的对象存储起来，以后再使用的时候就不要在重新获取，降低JQ性能的消耗  类选择器：$([selector])">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JQUERY">
+<meta property="og:url" content="https://dandanliu918.github.io/2017/04/05/JQUERY/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="jQ是一个轻量级的库JQ的方法整列$(&amp;apos;#div&amp;apos;)===$(&amp;apos;#div&amp;apos;) false 两个不同的实例 var $div=$(&amp;apos;#div&amp;apos;); $div.addClass() $div.children  注意：使用选择器获取JQ的对象存储起来，以后再使用的时候就不要在重新获取，降低JQ性能的消耗  类选择器：$([selector])">
+<meta property="og:updated_time" content="2017-04-05T05:52:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JQUERY">
+<meta name="twitter:description" content="jQ是一个轻量级的库JQ的方法整列$(&amp;apos;#div&amp;apos;)===$(&amp;apos;#div&amp;apos;) false 两个不同的实例 var $div=$(&amp;apos;#div&amp;apos;); $div.addClass() $div.children  注意：使用选择器获取JQ的对象存储起来，以后再使用的时候就不要在重新获取，降低JQ性能的消耗  类选择器：$([selector])">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://dandanliu918.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JQUERY" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/05/JQUERY/" class="article-date">
+  <time datetime="2017-04-05T05:48:22.000Z" itemprop="datePublished">2017-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JQUERY
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="jQ是一个轻量级的库"><a href="#jQ是一个轻量级的库" class="headerlink" title="jQ是一个轻量级的库"></a>jQ是一个轻量级的库</h2><h3 id="JQ的方法整列"><a href="#JQ的方法整列" class="headerlink" title="JQ的方法整列"></a>JQ的方法整列</h3><pre><code>$(&apos;#div&apos;)===$(&apos;#div&apos;) false 两个不同的实例
+var $div=$(&apos;#div&apos;);
+$div.addClass()
+$div.children
+
+注意：使用选择器获取JQ的对象存储起来，以后再使用的时候就不要在重新获取，降低JQ性能的消耗
+
+类选择器：$([selector]).xxx();
+ .add()向现有的JQ对象中追加新的内容，最后合并成一个新的JQ对象
+ .remove() 在页面的DOM结构中移除自己，等统一原生JS中removeChild
+ .addClass/removeClass/hasClass/toggleClass 操作样式类名
+ .animate 动画 类似于我们自己的tween算法动画库
+   eg：
+    $(&apos;.box&apos;).stop().animate({
+       top:10,
+       left:29
+    },1000,&apos;linear&apos;,function(){})
+ .stop/.finish 结束当前在云运行的动画，stop是停留在当前的位置，finish是立马运动到项目的位置
+ .fadeIn / fadeOut /fadeTooggle 
+ .show / hide / toggle
+ .slideUp /slideDown / slideToggle 对应的参数（&apos;slow/fast/[time]&apos;）
+
+ .append /appendTo 向末尾追加
+    容器.append(元素) 元素.appendTo(容器)
+ .prepend / prependTo 向开头追加
+ .insertBefore / insertAfter 追加到某一个元素之前和某一个元素之后
+ .attr 设置（批量设置） 或者获取元素的自定义属性，获取的值都是字符串 
+ .removeAttr 移除
+ .prop 设置（批量设置）或者获取元素的内置属性，一般操作表单元素的属性
+
+ .bind / undbind / trigger
+ .click / mouseover / mouseout / mousemove / blur / focus
+ .on / off 以上所有的事件绑定发你那个是都是会计绑定方式，最后实现的原理是基于 on/off 两个方法来实现的，而且采用的是DOM2事件处理，解决了this，重复，顺序等兼容问题 
+
+ .children 在子代中进行查找
+ .find 在后代中进行查找
+ .filter 在一个集合（同级）中进行二次筛选 
+ .prev / prevAll / next /nextAll /siblings /parent / parents
+
+ .css 设置（批量设置）或者获取元素的所有经过计算的css样式
+ .each
+   - 循环JQ对象中的每一个元素 $link.each(function (index,item){})
+   - 循环数组，对象，类数组的工具方法 $.each(ary,function(index,item){})
+ .empty 清空一个元素中的内容
+ .eq 通过索引获取指定位置的元素，返回的结果依然是JQ对象
+ .get 通过索引获取指定位置的元素，返回的结果是原生JS对象 $link[n]
+
+ .extend
+   - $.fn.extend({fn:function(){}}) 相当于在原型上追加课一个fn方法，使用的时候 $([sel]).fn执行即可&apos;扩展插件&apos;
+   - $.extend({example:function(){}}) 向JQ这个普通对象上扩展方法，此时调用这个方法需要使用 $.example() 即可 &quot;类库的扩展,提供一些常用的方法&quot;
+
+
+   .html/val/text : innerHtml/value,innerText
+   .val 一般是获取表单元素中内容 其余都是获取非表单中的内容，除了可以获取内容，如果传参数也是在设置内容
+   .closest : 获取距离元素最近的在指定选择器的祖先元素
+
+   .index 获取当前元素的索引
+   .innerHeight / innerWidth client系列的
+   .outerHeight / outWidth offset 系列的
+   .offset 获取当前元素距离body的偏移距离
+   .positon 获取当前元素距离父级参照我要的偏移距离
+   .offsetParent 获取父级参照物
+   .width / height 获取/设置元素的宽高
+
+   .serialize / serializeArray 表单序列化
+
+   .Callbacks 发布订阅模式
+   .fire() 执行
+
+   .isArray  函数用判定指定参数是否是一个数组 
+   .isEmptyObject 函数用于判定指定参数是否是一个空对象
+   .isFunction 函数用于判断指定参数是否是一个函数
+   .isNumeric  函数用于判断指定参数是否是一个数字值
+   .isPlainObject 函数用于判断指定参数是否是一个纯粹的对象
+   .isWindow  函数用于判断指定参数是否是一个窗口
+   .isXmlDoc 函数用于判断一个DOM节点是否位于XML文档中，或者其本身就是XML文档。
+</code></pre><h2 id="JQ中单例-发布订阅模式"><a href="#JQ中单例-发布订阅模式" class="headerlink" title="JQ中单例 + 发布订阅模式"></a>JQ中单例 + 发布订阅模式</h2><pre><code>var derRender=(function(){
+ var $demoPlay=$.Callbacks();//制定计划
+
+ //计划1
+ $demoPlay.add(function(){})
+ //计划2
+ $demoPlay.add(function(){})
+ return {
+   init:function(){
+      $.ajax({
+        url:&apos;url&apos;,
+        method:&apos;get&apos;,
+        dataType:&apos;json&apos;,
+        success:function(result){
+           if(result &amp;&amp; result.code==0){
+             var data=result.data;
+             $demoPlay.fire(data);//通知计划执行
+           }
+        }
+      })
+   }
+ }
+})()
+derRender.init();//单例模式执行
+</code></pre><h3 id="JQ方法转JS方法"><a href="#JQ方法转JS方法" class="headerlink" title="JQ方法转JS方法"></a>JQ方法转JS方法</h3><ul>
+<li><p>就是转换的后面加[0]即可</p>
+<p>$(“#id”).val()=$(“#id”)[0].value;<br>$(“#id”).append()=$(“#id”)[0].appendChild();</p>
+</li>
+</ul>
+<h3 id="面试中会遇到问题"><a href="#面试中会遇到问题" class="headerlink" title="面试中会遇到问题"></a>面试中会遇到问题</h3><pre><code>$.each(); // 直接定义在$(jQuery)这个类上的方法，不依赖jQuery对象
+$().each(); // 定义在$的类的原型上的方法，因为通过实例才能调拓展也只能站在这两个位置添加
+$.extend(); // 直接拓展在jQuery类上的
+$.fn.extend(); //  $.fn就是jQuery.prototype  直接拓展在jQuery的prototype上的
+
+function foo(){
+    console.log(&apos;ok&apos;);
+}
+
+$.extend({ // 直接拓展到jQ上
+    foo : foo
+});
+
+$.fn.extend({ // 直接拓展到jQ原型上
+    foo : foo
+});
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/04/05/JQUERY/" data-id="cj6ajxy5r000kamdjwmrkb63z" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/05/EVENT/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          EVENT
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/05/HTML5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HTML5</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/13/postName/">Web前端开发</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Color/">CSS3-颜色</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Slected/">CSS3-选择器</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Transition/">CSS3-过渡</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Border/">CSS-Border</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

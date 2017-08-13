@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>EVENT | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1，window.onload:等页面所有的内容都加载完成的时候，才开始执行js代码2，$()只是等DOM加载完成的时候，开始执行js代码  == $(document).ready()  12345以上两点总结：1.Dom0级事件：私有属性，同一个相同行为绑定不同方法会覆盖问题2.Dom2级事件：公有属性，当前元素所属属性eventTarget这个类的原型上，obj.addEventListen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EVENT">
+<meta property="og:url" content="https://dandanliu918.github.io/2017/04/05/EVENT/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1，window.onload:等页面所有的内容都加载完成的时候，才开始执行js代码2，$()只是等DOM加载完成的时候，开始执行js代码  == $(document).ready()  12345以上两点总结：1.Dom0级事件：私有属性，同一个相同行为绑定不同方法会覆盖问题2.Dom2级事件：公有属性，当前元素所属属性eventTarget这个类的原型上，obj.addEventListen">
+<meta property="og:updated_time" content="2017-04-05T05:52:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EVENT">
+<meta name="twitter:description" content="1，window.onload:等页面所有的内容都加载完成的时候，才开始执行js代码2，$()只是等DOM加载完成的时候，开始执行js代码  == $(document).ready()  12345以上两点总结：1.Dom0级事件：私有属性，同一个相同行为绑定不同方法会覆盖问题2.Dom2级事件：公有属性，当前元素所属属性eventTarget这个类的原型上，obj.addEventListen">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://dandanliu918.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-EVENT" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/05/EVENT/" class="article-date">
+  <time datetime="2017-04-05T05:48:33.000Z" itemprop="datePublished">2017-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      EVENT
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1，window-onload-等页面所有的内容都加载完成的时候，才开始执行js代码"><a href="#1，window-onload-等页面所有的内容都加载完成的时候，才开始执行js代码" class="headerlink" title="1，window.onload:等页面所有的内容都加载完成的时候，才开始执行js代码"></a>1，window.onload:等页面所有的内容都加载完成的时候，才开始执行js代码</h4><h4 id="2，-只是等DOM加载完成的时候，开始执行js代码-document-ready"><a href="#2，-只是等DOM加载完成的时候，开始执行js代码-document-ready" class="headerlink" title="2，$()只是等DOM加载完成的时候，开始执行js代码  == $(document).ready()"></a>2，$()只是等DOM加载完成的时候，开始执行js代码  == $(document).ready()</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">以上两点总结：</div><div class="line"></div><div class="line">1.Dom0级事件：私有属性，同一个相同行为绑定不同方法会覆盖问题</div><div class="line"></div><div class="line">2.Dom2级事件：公有属性，当前元素所属属性eventTarget这个类的原型上，obj.addEventListener()</div></pre></td></tr></table></figure>
+<h4 id="3-Dom0级事件和Dom二级事件区别"><a href="#3-Dom0级事件和Dom二级事件区别" class="headerlink" title="3,Dom0级事件和Dom二级事件区别"></a>3,Dom0级事件和Dom二级事件区别</h4><p> 1.Dom0级：是元素身上的私有属性 </p>
+<p>  -Dom0级事件，只能发生在事件流的冒泡阶段</p>
+<p> 2.Dom2级：是元素身上的公有属性 存放在eventTarget这个类的原型上</p>
+<h4 id="4-什么是事件？"><a href="#4-什么是事件？" class="headerlink" title="4.什么是事件？"></a>4.什么是事件？</h4><p> -1）鼠标事件MouseEvent<br>    onclick  ondbclick onmouseover  onmouseout onmouseeenter  onmouseleave  onmousetextmenu</p>
+<p> -2）系统事件<br>   onload onscroll onerror  onresize（浏览器大小事件）</p>
+<p> -3）键盘事件keyboardEvent<br>   onkeydown onkeyup onkeypress（前面两个事件的二合一）…</p>
+<p> -4）表单事件<br>    onfocus onblur …</p>
+<h4 id="5-事件对象：就是描述当前所有触发行为的详细信息"><a href="#5-事件对象：就是描述当前所有触发行为的详细信息" class="headerlink" title="5.事件对象：就是描述当前所有触发行为的详细信息"></a>5.事件对象：就是描述当前所有触发行为的详细信息</h4><p>  -1）标准浏览器下，通过形参e来得到事件对象</p>
+<p>  -2）IE6-8下的事件对象，跟形参没有任何关系，通过window.event来获取</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">兼容版本：e=e||window.event</div></pre></td></tr></table></figure>
+<h4 id="6-关于事件对象的详细信息"><a href="#6-关于事件对象的详细信息" class="headerlink" title="6.关于事件对象的详细信息"></a>6.关于事件对象的详细信息</h4><p>  -1）clientX/clientY :当前鼠标落脚点距离可视区左上角的坐标位置 （兼容）</p>
+<p>  -2）pageX/pageY：当前鼠标落脚点距离第一屏左上角的坐标位置 （不兼容）</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">兼容版本：</div><div class="line">  e.pageY=e.clientY+(document.documentElement.scrollTop||document.body.scrollTop)</div><div class="line">  e.pageX=e.clientX+(document.documentElement.scrollLeft||document.body.scrollLeft)</div></pre></td></tr></table></figure>
+<p>  -3)事件源：e.target 当前发生事件的这个元素 （不兼容）</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">兼容版本：e.target||e.srcElement</div></pre></td></tr></table></figure>
+<p>  -4）keyCode：键盘键码</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">keyBoardEvent: 键盘事件对象</div><div class="line">type: &apos;keyup&apos; 事件类型</div><div class="line">keyCode : 按键编码</div><div class="line">Enter : 13</div><div class="line">0-9 : 48-57</div><div class="line">left : 37</div><div class="line">up : 38</div><div class="line">right : 39</div><div class="line">down : 40</div><div class="line">space : 32</div><div class="line">backSpace : 8</div></pre></td></tr></table></figure>
+<p>  -5）阻止默认事件 </p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">版本一</div><div class="line">e.preventDefault?e.prevebtDefault():e.returnValue=false</div><div class="line"></div><div class="line">版本二</div><div class="line">e.preventDefault = e.preventDefault || function ()&#123; e.returnValue = false; &#125;</div></pre></td></tr></table></figure>
+<p>  -6）阻止事件冒泡 :原理 从子元素传播到祖元素</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">版本一</div><div class="line">e.stopPropagation?e.stopPropagation:e.cancelBubble=true;</div><div class="line"></div><div class="line">版本二</div><div class="line"> e.stopPropagation = e.stopPropagation || function ()&#123; e.cancelBubble = true; &#125;</div></pre></td></tr></table></figure>
+<h4 id="7-事件流"><a href="#7-事件流" class="headerlink" title="7.事件流"></a>7.事件流</h4><p>  -1）事件流包含两个阶段：1）捕获阶段（从外向里） 2）冒泡阶段（从里向外）</p>
+<p>  -2）事件流包含三个阶段：1）捕获阶段 2）事件源 e.target 3)冒泡</p>
+<p>  -注意：顺序问题：先捕获再冒泡</p>
+<h4 id="8-事件委托的本质：就是对冒泡的运用"><a href="#8-事件委托的本质：就是对冒泡的运用" class="headerlink" title="8.事件委托的本质：就是对冒泡的运用"></a>8.事件委托的本质：就是对冒泡的运用</h4><h4 id="9-onmouseover和onmouseout不同浏览器解决措施"><a href="#9-onmouseover和onmouseout不同浏览器解决措施" class="headerlink" title="9.onmouseover和onmouseout不同浏览器解决措施"></a>9.onmouseover和onmouseout不同浏览器解决措施</h4><p>  -1）onmouseenter 和 onmouseleave</p>
+<p>  -2）关联元素</p>
+<pre><code>onmouseover=&gt;var oTo=e.relatedTarget||e.fromElement;
+onmouseout=&gt;var oTo=e.relatedTarget||e.toElement;
+obj.contains(xxx)=&gt;布尔数据
+</code></pre>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">例子：</div><div class="line">oSpan.onmouseover=function (e) &#123;</div><div class="line">        e=e||window.event;</div><div class="line">        var oTo=e.relatedTarget || e.fromElement;</div><div class="line">        if(oSpan.contains(oTo)) return;</div><div class="line">        oMark.style.display=&apos;block&apos;;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    oSpan.onmouseout=function (e) &#123;</div><div class="line">        e=e||window.event;</div><div class="line">        var oTo=e.relatedTarget || e.toElement;</div><div class="line">        if(oSpan.contains(oTo)) return;</div><div class="line">        oMark.style.display=&apos;block&apos;;</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/04/05/EVENT/" data-id="cj6ajxy5l000gamdjs1dcsecg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/05/JSONP/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JSONP
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/05/JQUERY/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JQUERY</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/13/postName/">Web前端开发</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Color/">CSS3-颜色</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Slected/">CSS3-选择器</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Transition/">CSS3-过渡</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Border/">CSS-Border</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

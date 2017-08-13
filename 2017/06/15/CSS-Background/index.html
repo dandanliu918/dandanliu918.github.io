@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CSS-Background | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="背景的基本属性background-color 背景颜色 background-image 背景图片 background-repeat 背景图片展开方式 background-attachment  背景图片是固定和是滚动 background-position  背景图片位置 background-origin  背景图片的起点 background-clip  背景图片的显示范围 backg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS-Background">
+<meta property="og:url" content="https://dandanliu918.github.io/2017/06/15/CSS-Background/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="背景的基本属性background-color 背景颜色 background-image 背景图片 background-repeat 背景图片展开方式 background-attachment  背景图片是固定和是滚动 background-position  背景图片位置 background-origin  背景图片的起点 background-clip  背景图片的显示范围 backg">
+<meta property="og:updated_time" content="2017-06-15T16:02:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS-Background">
+<meta name="twitter:description" content="背景的基本属性background-color 背景颜色 background-image 背景图片 background-repeat 背景图片展开方式 background-attachment  背景图片是固定和是滚动 background-position  背景图片位置 background-origin  背景图片的起点 background-clip  背景图片的显示范围 backg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://dandanliu918.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS-Background" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/15/CSS-Background/" class="article-date">
+  <time datetime="2017-06-15T15:55:54.000Z" itemprop="datePublished">2017-06-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS-Background
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="背景的基本属性"><a href="#背景的基本属性" class="headerlink" title="背景的基本属性"></a>背景的基本属性</h2><pre><code>background-color 背景颜色
+background-image 背景图片
+background-repeat 背景图片展开方式
+background-attachment  背景图片是固定和是滚动
+background-position  背景图片位置
+background-origin  背景图片的起点
+background-clip  背景图片的显示范围
+background-size  背景图片的尺寸大小
+background-break  指定内联元素背景图片进行平铺时的循环方式
+</code></pre><ul>
+<li><p>background-repeat </p>
+<pre><code>属性:
+repeat 平铺
+repeat-x x轴平铺
+repeat-y y轴平铺
+no-repeat 不平铺
+</code></pre></li>
+<li><p>background-attachment </p>
+<pre><code>属性：
+scroll 滚动
+fixed 固定不动
+</code></pre></li>
+<li><p>background-position </p>
+<pre><code>属性：此处都是或者 ||
+percentage 百分比
+length 数值
+left center/right bottom
+</code></pre></li>
+<li><p>background-origin  9+</p>
+<pre><code>属性：
+padding-box(padding) 默认值 从border内边缘开始显示背景图片
+border-box(border) 从border外边缘开始显示背景图片
+content-box(content) 从content外边缘（padding 内边缘）开始显示图片
+</code></pre></li>
+<li><p>background-clip  9+</p>
+<pre><code>属性：
+padding-box(padding) 默认值 从padding区域向外裁剪
+border-box(border) 从border区域向外裁剪
+content-box(content) 从content区域向外裁剪
+</code></pre><ul>
+<li><p>background-size 9+</p>
+<pre><code>属性：
+auto 自动
+length 数值
+percentage 百分比
+cover 将图片放大 平铺整个容器
+contain 保持背景图片本身宽高比例
+</code></pre></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/06/15/CSS-Background/" data-id="cj6ajxy560003amdjb0o7pab0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/15/CSS-Border/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CSS-Border
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/15/CSS-Box/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS3-盒子</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/13/postName/">Web前端开发</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Color/">CSS3-颜色</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Slected/">CSS3-选择器</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Transition/">CSS3-过渡</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Border/">CSS-Border</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

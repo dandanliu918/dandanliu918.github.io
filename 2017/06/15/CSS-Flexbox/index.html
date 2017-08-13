@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CSS3-盒模型 flexbox | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="flexbox 模型的基础知识 display 伸缩容器设置 box 设置为块伸缩容器 inline-box 设置为内联级伸缩容器  box-orient 伸缩流的方向 horizontal 从左到右在一条平行线上显示 veritical 从上到下在一条垂直线上显示 inline-axis 沿着内联轴排列显示 block-axis 沿着块轴排列显示  box-direction 布局顺序 norm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3-盒模型 flexbox">
+<meta property="og:url" content="https://dandanliu918.github.io/2017/06/15/CSS-Flexbox/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="flexbox 模型的基础知识 display 伸缩容器设置 box 设置为块伸缩容器 inline-box 设置为内联级伸缩容器  box-orient 伸缩流的方向 horizontal 从左到右在一条平行线上显示 veritical 从上到下在一条垂直线上显示 inline-axis 沿着内联轴排列显示 block-axis 沿着块轴排列显示  box-direction 布局顺序 norm">
+<meta property="og:updated_time" content="2017-06-15T16:02:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3-盒模型 flexbox">
+<meta name="twitter:description" content="flexbox 模型的基础知识 display 伸缩容器设置 box 设置为块伸缩容器 inline-box 设置为内联级伸缩容器  box-orient 伸缩流的方向 horizontal 从左到右在一条平行线上显示 veritical 从上到下在一条垂直线上显示 inline-axis 沿着内联轴排列显示 block-axis 沿着块轴排列显示  box-direction 布局顺序 norm">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://dandanliu918.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS-Flexbox" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/15/CSS-Flexbox/" class="article-date">
+  <time datetime="2017-06-15T15:54:14.000Z" itemprop="datePublished">2017-06-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS3-盒模型 flexbox
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="flexbox-模型的基础知识"><a href="#flexbox-模型的基础知识" class="headerlink" title="flexbox 模型的基础知识"></a>flexbox 模型的基础知识</h2><ul>
+<li><p>display 伸缩容器设置</p>
+<pre><code>box 设置为块伸缩容器
+inline-box 设置为内联级伸缩容器
+</code></pre></li>
+<li><p>box-orient 伸缩流的方向</p>
+<pre><code>horizontal 从左到右在一条平行线上显示
+veritical 从上到下在一条垂直线上显示
+inline-axis 沿着内联轴排列显示
+block-axis 沿着块轴排列显示
+</code></pre></li>
+<li><p>box-direction 布局顺序</p>
+<pre><code>normal 正常顺序
+reverse 倒序
+</code></pre></li>
+<li><p>box-lines 伸缩换行</p>
+<pre><code>single 伸缩容器多行或多列显示伸缩项目
+multiple 指定容器多行或者多列显示伸缩项目，当伸缩容器没有足够空间 就会自动换行或多列显示
+</code></pre></li>
+<li><p>box-pack 主轴对齐</p>
+<pre><code>start 伸缩项目向一行的起始位置靠齐
+end  和start相反
+center 伸缩项目向中间靠齐
+justify 伸缩项目会平均分布在一行里
+</code></pre></li>
+<li><p>box-align 侧轴对齐</p>
+<pre><code>start 伸缩容器项目顶部放置在伸缩容器的顶端，伸缩容器的额外空间放置在伸缩项目低端
+end 与start 相反
+center 伸缩项目紧靠一起，垂直居中于伸缩容器
+baseline 伸缩项目根据他们基线对齐
+stretch 伸缩项目填充整个伸缩容器
+</code></pre></li>
+<li><p>box-flex 伸缩性</p>
+<pre><code>number 一般是默认三个 如果一个伸缩项目设置为2 另一个默认为1
+</code></pre></li>
+<li><p>box-ordinal-group 显示顺序</p>
+<pre><code>integer 默认值为1 为正整数 主要设置伸缩项目在伸缩容器的位置顺序列号 值越大 伸缩项目月排在后面
+</code></pre></li>
+</ul>
+<h2 id="混合版flexbox-模型的基本使用"><a href="#混合版flexbox-模型的基本使用" class="headerlink" title="混合版flexbox 模型的基本使用"></a>混合版flexbox 模型的基本使用</h2><ul>
+<li><p>display  伸缩容器设置</p>
+<pre><code>flexbox 设置元素为块级伸缩容器
+inline-flexbox 设置元素为内联块伸缩容器
+</code></pre></li>
+<li><p>flex-direction 伸缩流方向</p>
+<pre><code>row 初始值 =ltr 从左到右 =rtl 从右向左
+row-reverse  与row 方向相反
+column 伸缩项目按着文档流出现的顺序从上到下排列
+column-reverse 伸缩项目按着文档流出现的顺序从下到上排列
+</code></pre><ul>
+<li><p>flex-wrap 伸缩换行</p>
+<p>   nowrap 默认值<br>   wrap 伸缩容器的所有伸缩项目在伸缩项目时，伸缩项目就会移除容器 自动换行 以多行多列显示<br>   wrap-reverse 与wrap 相似 但是与wrap方向相反</p>
+</li>
+<li><p>flex-flow 伸缩方向与换行</p>
+<pre><code>flex-direction 用来设置伸缩容器的伸缩流方向
+flex-wrap 用来设置伸缩容器中伸缩项目在伸缩容器无足够空间的时候伸缩项目在伸缩容器中是否换行排列
+</code></pre></li>
+<li><p>flex-pack 主轴对齐</p>
+<pre><code>start 伸缩项目向一行的起始位置靠齐
+end  和start相反
+center 伸缩项目向中间靠齐
+justify 伸缩项目会平均分布在一行里
+distribute 伸缩项目会平均分布在一行里 两边会保留一半的空间
+</code></pre></li>
+<li><p>flex-align 侧轴对齐</p>
+<pre><code>start 伸缩容器项目顶部放置在伸缩容器的顶端，伸缩容器的额外空间放置在伸缩项目低端
+end 与start 相反
+center 伸缩项目紧靠一起，垂直居中于伸缩容器
+baseline 伸缩项目根据他们基线对齐
+stretch 伸缩项目填充整个伸缩容器
+</code></pre></li>
+<li><p>flex-line-pack 堆栈伸缩行</p>
+<pre><code>start 伸缩项目行想布局轴（伸缩容器的侧轴）的起始位置靠齐
+end 伸缩项目行向布局轴（伸缩容器的侧轴）的结尾位置靠齐
+center .......中间位置靠齐
+justify 平均分布 第一个在顶部 最后一个在底部
+distribute 伸缩项目平均分布在布局轴 两端保留一半空间
+stretch 伸缩项目拉伸填充整个伸缩容器
+</code></pre></li>
+<li><p>flex 伸缩性</p>
+<pre><code>positive-flex 设置正弹性的整数 如果忽略 该项目的正弹性为1 负值无效
+negaive-flex 设置负弹性的整数 如果忽略 该项目的正弹性为0 负值无效
+preferred-size 伸缩项目的首选大小
+none 如果忽略 首选大小默认值为0
+</code></pre></li>
+<li><p>flex-order 显示顺序</p>
+<pre><code>integer 是一个自然数 默认值为0 用来设置伸缩项目的位置顺序号
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h2 id="新版本flexbox模型的基本使用"><a href="#新版本flexbox模型的基本使用" class="headerlink" title="新版本flexbox模型的基本使用"></a>新版本flexbox模型的基本使用</h2><ul>
+<li><p>display 伸缩容器</p>
+<pre><code>flex  设置块伸缩容器
+inline-flex 设置内联伸缩容器
+</code></pre></li>
+<li><p>flex-direction 伸缩流方向</p>
+<pre><code>row ltr排版=从左向右排 rtl排版=从右向左排列
+row-reverse 与row 相反
+column 从上到下
+column-reverse 从下到上
+</code></pre></li>
+<li><p>flex-wrap 伸缩换行</p>
+<pre><code>nowrap 伸缩容器单行显示 ltr= 从左到右 rtl=从右到左
+wrap 伸缩容器多行显示 ltr=从左到右 rtl =从右到左
+wrap-reverse 与wrap相反
+</code></pre><p>-flex-flow 伸缩流方向与换行</p>
+</li>
+<li><p>justify-content 主轴对齐</p>
+<pre><code>flex-start 伸缩项目向一行的起始位置靠齐
+flex-end 伸缩项目向一行的结束位置靠齐
+center 伸缩项目向一行的中间位置靠齐
+space-between 伸缩项目会平均分布在行里 第一个在开始 最后一个在结尾
+space-around 伸缩姓名会平均分布在行里 两边会平分留一半位置
+</code></pre></li>
+<li><p>align-items 和align-self 侧轴对齐</p>
+<pre><code>flex-start 伸缩项目在侧轴起点的外边距紧靠该行的在侧轴起始边
+flex-end 伸缩项目在侧轴起点的外边距紧靠该行的在侧轴终点边
+center 伸缩项目在外边距盒在该行的侧轴上居中放置
+baseline 伸缩项目跟进伸缩项目的基线对齐
+stretch 默认值伸缩项目拉伸填充整个容器
+</code></pre></li>
+<li><p>align-content 堆栈伸缩行</p>
+<pre><code>flex-start 各行向伸缩容器的起点位置堆叠
+flex-end 各行向伸缩容器的结束位置堆叠
+center 各行向伸缩容器的中间位置堆叠
+space-between 伸缩项目会平均分布在行里 第一个在开始 最后一个在结尾
+space-around 伸缩姓名会平均分布在行里 两边会平分留一半位置
+stetch 默认值 将会将伸展以占用额外的空间
+</code></pre></li>
+<li><p>flex  伸缩性</p>
+<pre><code>none 无
+flex-grow number 如果都设置1 则都大小相同 如果给其中一个设置2 则这个伸缩项目所占的额外空间是其他的2倍
+flex-shrink number 设置长度（负值也可以）
+flex-basis length |auto 设置伸缩项目的基准值
+</code></pre></li>
+<li><p>order 显示顺序</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/06/15/CSS-Flexbox/" data-id="cj6ajxy5a0007amdj2jaxa1zv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/15/CSS-Gradin/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CSS3-渐变
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/15/CSS-Media/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS3-媒体查询</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/13/postName/">Web前端开发</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Color/">CSS3-颜色</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Slected/">CSS3-选择器</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Transition/">CSS3-过渡</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Border/">CSS-Border</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
