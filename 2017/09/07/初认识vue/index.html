@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>CSS-Background | Hexo</title>
+  <title>初认识vue | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="背景的基本属性background-color 背景颜色 background-image 背景图片 background-repeat 背景图片展开方式 background-attachment  背景图片是固定和是滚动 background-position  背景图片位置 background-origin  背景图片的起点 background-clip  背景图片的显示范围 backg">
+  <meta name="description" content="vue是？ 是一个聚焦视图层的框架  vue安装 (不支持IE8及其以下版本) cdn   http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js   npm安装  npm install vue   bower安装  bower install vue    第一步1231 初始化 vue init webpack vue-bookstore2 npm int">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS-Background">
-<meta property="og:url" content="https://dandanliu918.github.io/2017/06/15/CSS-Background/index.html">
+<meta property="og:title" content="初认识vue">
+<meta property="og:url" content="https://dandanliu918.github.io/2017/09/07/初认识vue/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="背景的基本属性background-color 背景颜色 background-image 背景图片 background-repeat 背景图片展开方式 background-attachment  背景图片是固定和是滚动 background-position  背景图片位置 background-origin  背景图片的起点 background-clip  背景图片的显示范围 backg">
-<meta property="og:updated_time" content="2017-06-15T16:02:33.000Z">
+<meta property="og:description" content="vue是？ 是一个聚焦视图层的框架  vue安装 (不支持IE8及其以下版本) cdn   http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js   npm安装  npm install vue   bower安装  bower install vue    第一步1231 初始化 vue init webpack vue-bookstore2 npm int">
+<meta property="og:updated_time" content="2017-09-07T08:39:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS-Background">
-<meta name="twitter:description" content="背景的基本属性background-color 背景颜色 background-image 背景图片 background-repeat 背景图片展开方式 background-attachment  背景图片是固定和是滚动 background-position  背景图片位置 background-origin  背景图片的起点 background-clip  背景图片的显示范围 backg">
+<meta name="twitter:title" content="初认识vue">
+<meta name="twitter:description" content="vue是？ 是一个聚焦视图层的框架  vue安装 (不支持IE8及其以下版本) cdn   http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js   npm安装  npm install vue   bower安装  bower install vue    第一步1231 初始化 vue init webpack vue-bookstore2 npm int">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -63,10 +63,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-CSS-Background" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-初认识vue" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/06/15/CSS-Background/" class="article-date">
-  <time datetime="2017-06-15T15:55:54.000Z" itemprop="datePublished">2017-06-15</time>
+    <a href="/2017/09/07/初认识vue/" class="article-date">
+  <time datetime="2017-09-07T07:14:26.000Z" itemprop="datePublished">2017-09-07</time>
 </a>
     
   </div>
@@ -77,7 +77,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      CSS-Background
+      初认识vue
     </h1>
   
 
@@ -85,62 +85,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="背景的基本属性"><a href="#背景的基本属性" class="headerlink" title="背景的基本属性"></a>背景的基本属性</h2><pre><code>background-color 背景颜色
-background-image 背景图片
-background-repeat 背景图片展开方式
-background-attachment  背景图片是固定和是滚动
-background-position  背景图片位置
-background-origin  背景图片的起点
-background-clip  背景图片的显示范围
-background-size  背景图片的尺寸大小
-background-break  指定内联元素背景图片进行平铺时的循环方式
-</code></pre><ul>
-<li><p>background-repeat </p>
-<pre><code>属性:
-repeat 平铺
-repeat-x x轴平铺
-repeat-y y轴平铺
-no-repeat 不平铺
-</code></pre></li>
-<li><p>background-attachment </p>
-<pre><code>属性：
-scroll 滚动
-fixed 固定不动
-</code></pre></li>
-<li><p>background-position </p>
-<pre><code>属性：此处都是或者 ||
-percentage 百分比
-length 数值
-left center/right bottom
-</code></pre></li>
-<li><p>background-origin  9+</p>
-<pre><code>属性：
-padding-box(padding) 默认值 从border内边缘开始显示背景图片
-border-box(border) 从border外边缘开始显示背景图片
-content-box(content) 从content外边缘（padding 内边缘）开始显示图片
-</code></pre></li>
-<li><p>background-clip  9+</p>
-<pre><code>属性：
-padding-box(padding) 默认值 从padding区域向外裁剪
-border-box(border) 从border区域向外裁剪
-content-box(content) 从content区域向外裁剪
-</code></pre><ul>
-<li><p>background-size 9+</p>
-<pre><code>属性：
-auto 自动
-length 数值
-percentage 百分比
-cover 将图片放大 平铺整个容器
-contain 保持背景图片本身宽高比例
-</code></pre></li>
+        <h2 id="vue是？"><a href="#vue是？" class="headerlink" title="vue是？"></a>vue是？</h2><ul>
+<li>是一个聚焦视图层的框架</li>
 </ul>
+<h2 id="vue安装-不支持IE8及其以下版本"><a href="#vue安装-不支持IE8及其以下版本" class="headerlink" title="vue安装 (不支持IE8及其以下版本)"></a>vue安装 (不支持IE8及其以下版本)</h2><ul>
+<li><p>cdn </p>
+<blockquote>
+<p><a href="http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js" target="_blank" rel="external">http://cdn.jsdelivr.net/vue/1.0.26/vue.min.js</a></p>
+</blockquote>
+</li>
+<li><p>npm安装</p>
+<blockquote>
+<p>npm install vue</p>
+</blockquote>
+</li>
+<li><p>bower安装</p>
+<blockquote>
+<p>bower install vue</p>
+</blockquote>
 </li>
 </ul>
-
+<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1 初始化 vue init webpack vue-bookstore</div><div class="line">2 npm intsall </div><div class="line">3 npm install bootstrap  vue-resource --save</div></pre></td></tr></table></figure>
+<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1 在component组件里建 add list deatil 三个组件</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dandanliu918.github.io/2017/06/15/CSS-Background/" data-id="cj7al1vho00013ydjsz5wns1o" class="article-share-link">Share</a>
+      <a data-url="https://dandanliu918.github.io/2017/09/07/初认识vue/" data-id="cj7al1vjc000w3ydj0dxgd5gy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -149,19 +119,10 @@ contain 保持背景图片本身宽高比例
     
 <nav id="article-nav">
   
-    <a href="/2017/06/15/CSS-Border/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          CSS-Border
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/06/15/CSS-Box/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/09/05/Interview-questions/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">CSS3-盒子</div>
+      <div class="article-nav-title">Interview questions</div>
     </a>
   
 </nav>

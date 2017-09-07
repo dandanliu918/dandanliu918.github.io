@@ -61,6 +61,116 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-REPLACE-FOREACH-MAP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/05/REPLACE-FOREACH-MAP/" class="article-date">
+  <time datetime="2017-04-05T05:49:36.000Z" itemprop="datePublished">2017-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/05/REPLACE-FOREACH-MAP/">REPLACE&amp;FOREACH&amp;MAP</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h2><ul>
+<li><p>replace(reg,callback)</p>
+<ul>
+<li>参数1 正则</li>
+<li><p>参数2 函数 函数执行多少次，取决于正则能成功在字符串匹配多少次</p>
+<ul>
+<li>注意：每次用函数的返回值return，来替换正则所匹配到的内容</li>
+<li><p>函数执行的时候打印 arguments </p>
+<pre><code>arguments
+[正则匹配到的内容,分组1，分组2...    index,input]
+  0                          length-2,length-1
+
+var str=&apos;全日制第七期学费:14800&apos;;
+var ary=[&apos;零&apos;,&apos;壹&apos;,&apos;贰&apos;,&apos;叁&apos;,&apos;肆&apos;,&apos;伍&apos;,&apos;陆&apos;,&apos;柒&apos;,&apos;捌&apos;,&apos;玖&apos;];
+var reg=/\d/g;
+str=str.replace(reg,function (s0) {
+        return ary[s0];
+});
+ console.log(str)
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h2><ul>
+<li><p>forEach(callback,this);</p>
+<pre><code>一：
+ 1 参数callback 回调函数 参数this：改变cb中的this指向
+    1）参数callback 取决ary调用次数
+    2）回调函数中的this默认是windows，this可以被forEach的第二个参数修改
+    3）回调函数中三个参数
+      - 1 item 当前项
+      - 2 index 索引
+      - 3 input 原始数组
+    4）回调函数没有返回值
+
+ 2 参数2可传可不传
+ 3 forEach没有返回值
+ 4 forEach这个方法是挂在Array.prototype上
+
+ 二：
+ Array.prototype.myForEach=function(callback,content){
+   content =content || window;
+   if(&apos;forEach&apos; in Array.prototype){
+     this.forEach(callback,content)
+   }
+   for(var i=0;i&lt;this.length;i++){
+     callback(content,this[i],this);
+   }
+ }
+</code></pre></li>
+</ul>
+<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><ul>
+<li><p>原理同forEach</p>
+<pre><code>var  ary=[2,3,44,56];
+var obj={};
+Array.prototype.myMap=function (cb,content) {
+    content=content||window;
+    if(&apos;map&apos; in Array.prototype){
+       return this.map(cb,content);//这里是将map的返回值返回给外面的函数
+    }
+    var ary=[];
+    for(var i=0;i&lt;this.length;i++){
+        var res=cb.call(content,this[i],i,this);
+        ary.push(res);
+    }
+    return ary;
+};
+ary.myMap(function (item,index,input) {
+    console.log(this);
+},obj);
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/04/05/REPLACE-FOREACH-MAP/" data-id="cj7al1viy000o3ydjtxeemyxp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-NODE" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/04/05/NODE/" class="article-date">
@@ -285,7 +395,7 @@ fs.readFileSync/fs.readFile
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dandanliu918.github.io/2017/04/05/NODE/" data-id="cj6as905o000mo1djym8a0y28" class="article-share-link">Share</a>
+      <a data-url="https://dandanliu918.github.io/2017/04/05/NODE/" data-id="cj7al1vix000n3ydj6ijp6lmw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -347,7 +457,7 @@ window.clearInterval
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dandanliu918.github.io/2017/04/05/MATH-DATE-TIME/" data-id="cj6as905m000lo1djdhgqzdqi" class="article-share-link">Share</a>
+      <a data-url="https://dandanliu918.github.io/2017/04/05/MATH-DATE-TIME/" data-id="cj7al1viw000m3ydjzwhgwu9a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -437,7 +547,7 @@ json p
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dandanliu918.github.io/2017/04/05/JSONP/" data-id="cj6as905k000ko1dj3mq3fo9t" class="article-share-link">Share</a>
+      <a data-url="https://dandanliu918.github.io/2017/04/05/JSONP/" data-id="cj7al1viv000l3ydjnvo7utm0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -504,7 +614,7 @@ obj.contains(xxx)=&gt;布尔数据
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dandanliu918.github.io/2017/04/05/EVENT/" data-id="cj6as905a000fo1djm186p4e9" class="article-share-link">Share</a>
+      <a data-url="https://dandanliu918.github.io/2017/04/05/EVENT/" data-id="cj7al1vil000e3ydjy7nsg627" class="article-share-link">Share</a>
       
       
     </footer>
@@ -661,7 +771,7 @@ $.fn.extend({ // 直接拓展到jQ原型上
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dandanliu918.github.io/2017/04/05/JQUERY/" data-id="cj6as905i000jo1djbwebsl5o" class="article-share-link">Share</a>
+      <a data-url="https://dandanliu918.github.io/2017/04/05/JQUERY/" data-id="cj7al1vir000j3ydjp6ejmfyn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -721,7 +831,7 @@ $.fn.extend({ // 直接拓展到jQ原型上
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dandanliu918.github.io/2017/04/05/HTML5/" data-id="cj6as905h000io1djl99cmg8t" class="article-share-link">Share</a>
+      <a data-url="https://dandanliu918.github.io/2017/04/05/HTML5/" data-id="cj7al1vip000h3ydj5ae9xsou" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1014,7 +1124,7 @@ Math函数
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dandanliu918.github.io/2017/04/05/HTML5-CSS3-LESS/" data-id="cj6as905f000ho1dj9v35dmnf" class="article-share-link">Share</a>
+      <a data-url="https://dandanliu918.github.io/2017/04/05/HTML5-CSS3-LESS/" data-id="cj7al1viq000i3ydj066w3tpe" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1172,7 +1282,7 @@ git config list 查看配置列表
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dandanliu918.github.io/2017/04/05/git/" data-id="cj6as9060000to1djygtycrlx" class="article-share-link">Share</a>
+      <a data-url="https://dandanliu918.github.io/2017/04/05/git/" data-id="cj7al1vj8000v3ydjapx4s5qu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1302,77 +1412,7 @@ lastElementChild 最后一个元素子节点(是元素) 不兼容
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dandanliu918.github.io/2017/04/05/Dom/" data-id="cj6as9059000eo1djxm9swwi9" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-call-apply-bind" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/05/call-apply-bind/" class="article-date">
-  <time datetime="2017-04-05T05:47:15.000Z" itemprop="datePublished">2017-04-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/05/call-apply-bind/">call&amp;apply&amp;bind</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Call（）-作用：改变this指向"><a href="#Call（）-作用：改变this指向" class="headerlink" title="Call（） 作用：改变this指向"></a>Call（） 作用：改变this指向</h2><ul>
-<li>call第一个参数：改变call点前面的函数中this指向</li>
-<li>call的第二个参数开始，对函数中的形参从左往右的赋值<br>注意：call继承：把父类私有属性和方法，都继承给了子类私有的</li>
-</ul>
-<p>  注意：js中有严格模式和非严格模式区别’use strict’</p>
-<pre><code>1.call 方法中的this如果严格模式下即使是null和undefined 那么也直接使用，非严格模式下都是Window
-2.如果call没有写参数，严格模式下undefined，非严格模式下是Window
-3.在严格模式下自运行函数中的this是undefined，非严格模式下是window
-4.在严格模式下函数执行时候如果&apos;.&apos;前面没有，那么this就undefined
-
-call用法：
-1.fn1.call（fn2） 最后是fn1执行
-2.fn1.call.call.call.call(fn2) 最后就是fn2执行，如果fn2没有传一个函数那么久报错
-</code></pre><h2 id="apply（）-作用：改变this指向"><a href="#apply（）-作用：改变this指向" class="headerlink" title="apply（） 作用：改变this指向"></a>apply（） 作用：改变this指向</h2><ul>
-<li>apply的第一个参数也是用来修改调用apply那个函数中的this的</li>
-<li><p>apply的第二个参数是一个数组，是把数组里的每一项当作参数分别传给调用apply的函数</p>
-<p>ps:其实就是传参的方式不同。call是一个个的，apply是一个数组</p>
-</li>
-</ul>
-<pre><code>function sum(num1,num2){
-      console.log(this);
-      console.log(num1 + num2);
-  }
-  sum(100,200); //window 300
-  sum.call(null,100,200); //window 300
-  sum.apply(document.body,[100,200]); // body 300
-</code></pre><h3 id="bind（）只改变this指向"><a href="#bind（）只改变this指向" class="headerlink" title="bind（）只改变this指向"></a>bind（）只改变this指向</h3><ul>
-<li>bind方法修改完this之后并不执行，只是返回一个已经修改过this的新函数</li>
-<li><p>bind方法的兼容是有问题，bind方法只是先处理了this然后返回一个新函数</p>
-<pre><code>var res = sum.bind(document.body);
-console.log(res === sum); // false res就是修改过this的新函数
-res(300,400); // 700
-</code></pre></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://dandanliu918.github.io/2017/04/05/call-apply-bind/" data-id="cj6as905x000ro1djcixjjgaf" class="article-share-link">Share</a>
+      <a data-url="https://dandanliu918.github.io/2017/04/05/Dom/" data-id="cj7al1vik000d3ydjw3jbhrrs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1403,7 +1443,7 @@ res(300,400); // 700
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
     </div>
   </div>
 
@@ -1416,7 +1456,15 @@ res(300,400); // 700
       <ul>
         
           <li>
-            <a href="/2017/08/13/postName/">Web前端开发</a>
+            <a href="/2017/09/07/初认识vue/">初认识vue</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/05/Interview-questions/">Interview questions</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/04/AJAX/">AJAX</a>
           </li>
         
           <li>
@@ -1425,14 +1473,6 @@ res(300,400); // 700
         
           <li>
             <a href="/2017/06/15/CSS-Slected/">CSS3-选择器</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/15/CSS-Transition/">CSS3-过渡</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/15/CSS-Border/">CSS-Border</a>
           </li>
         
       </ul>

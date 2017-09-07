@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>AJAX | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="原理 异步的JavaScript和xml，是一种创建交互式网页应用的网页开发技术  优点 1 无刷新更新数据 2 异步与服务器通信 3 前端和后端负载平衡 4 基于标准被广泛支持 5 界面与应用分离  缺点 1 Ajax干掉了back和history功能，即对浏览器机制的破坏 2 Ajax安全问题 3 对搜索引擎支持较弱 4 破坏程序的异常处理机制 5 违背url和资源定位的初衷 6 Ajax不能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AJAX">
+<meta property="og:url" content="https://dandanliu918.github.io/2017/09/04/AJAX/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="原理 异步的JavaScript和xml，是一种创建交互式网页应用的网页开发技术  优点 1 无刷新更新数据 2 异步与服务器通信 3 前端和后端负载平衡 4 基于标准被广泛支持 5 界面与应用分离  缺点 1 Ajax干掉了back和history功能，即对浏览器机制的破坏 2 Ajax安全问题 3 对搜索引擎支持较弱 4 破坏程序的异常处理机制 5 违背url和资源定位的初衷 6 Ajax不能">
+<meta property="og:updated_time" content="2017-09-04T11:40:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AJAX">
+<meta name="twitter:description" content="原理 异步的JavaScript和xml，是一种创建交互式网页应用的网页开发技术  优点 1 无刷新更新数据 2 异步与服务器通信 3 前端和后端负载平衡 4 基于标准被广泛支持 5 界面与应用分离  缺点 1 Ajax干掉了back和history功能，即对浏览器机制的破坏 2 Ajax安全问题 3 对搜索引擎支持较弱 4 破坏程序的异常处理机制 5 违背url和资源定位的初衷 6 Ajax不能">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://dandanliu918.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-AJAX" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/04/AJAX/" class="article-date">
+  <time datetime="2017-09-04T05:46:39.000Z" itemprop="datePublished">2017-09-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      AJAX
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
+<li>异步的JavaScript和xml，是一种创建交互式网页应用的网页开发技术</li>
+</ul>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
+<li>1 无刷新更新数据</li>
+<li>2 异步与服务器通信</li>
+<li>3 前端和后端负载平衡</li>
+<li>4 基于标准被广泛支持</li>
+<li>5 界面与应用分离</li>
+</ul>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
+<li>1 Ajax干掉了back和history功能，即对浏览器机制的破坏</li>
+<li>2 Ajax安全问题</li>
+<li>3 对搜索引擎支持较弱</li>
+<li>4 破坏程序的异常处理机制</li>
+<li>5 违背url和资源定位的初衷</li>
+<li>6 Ajax不能很好支持移动设备</li>
+<li>7 客户端过肥，太多客户端代码造成开发成本升高</li>
+</ul>
+<h2 id="Ajax引擎（XMLHttpRequest）"><a href="#Ajax引擎（XMLHttpRequest）" class="headerlink" title="Ajax引擎（XMLHttpRequest）"></a>Ajax引擎（XMLHttpRequest）</h2><ul>
+<li><p>Ajax引擎就是XMLHttpRequest对象，所有现代浏览器均支持XMLHttpRequest对象（IE5和IE6使用的ActiveXObeject）</p>
+<h3 id="适用于IE7之前的版本"><a href="#适用于IE7之前的版本" class="headerlink" title="适用于IE7之前的版本"></a>适用于IE7之前的版本</h3><p>  function createXHR() {</p>
+<pre><code>    if(typeof  arguments.callee.activeXString != &quot;string&quot;){
+        var versions= [&quot;MSXML2.XMLHttp.6.0&quot;,&quot;MSXML2.XMLHttp.3.0&quot;,&quot;MSXML2.XMLHttp&quot;];
+        for(var i=0;i&lt;versions.length;i++){
+          try{
+              new ActiveXObject(versions[i]);
+              arguments.callee.activeXString=versions[i];
+              break;
+          }catch(e){
+
+          }
+        }
+    }
+    return new new ActiveXObject(arguments.callee.activeXString);
+}
+</code></pre></li>
+</ul>
+<h3 id="Ajax引擎的状态属性readyState（0-1-2-3-4）"><a href="#Ajax引擎的状态属性readyState（0-1-2-3-4）" class="headerlink" title="Ajax引擎的状态属性readyState（0 1 2 3 4）"></a>Ajax引擎的状态属性readyState（0 1 2 3 4）</h3><ul>
+<li>0 请求初始化 var xml=new XMLHttpRequest();</li>
+<li>1 服务器链接已经建立 xml.open()</li>
+<li>2 请求已经发送</li>
+<li>3 请求已经接收</li>
+<li>4 请求已经完成 xml.send()</li>
+</ul>
+<h2 id="Ajax完整版本"><a href="#Ajax完整版本" class="headerlink" title="Ajax完整版本"></a>Ajax完整版本</h2><pre><code>var xml= new XMLHttpRequest();
+xml.open(&apos;get&apos;,&apos;data.txt&apos;,false);
+xml.onreadystatechange=function () {
+  if(xml.readyState==4 &amp;&amp; /2\d{2}/.test(xml.status)){
+      alert(xhr.responseText)
+  }  
+}
+xml.send(null)
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dandanliu918.github.io/2017/09/04/AJAX/" data-id="cj7al1vhh00003ydjndll3kes" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/05/Interview-questions/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Interview questions
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/15/CSS-Color/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS3-颜色</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/09/07/初认识vue/">初认识vue</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/05/Interview-questions/">Interview questions</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/04/AJAX/">AJAX</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Color/">CSS3-颜色</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/CSS-Slected/">CSS3-选择器</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
